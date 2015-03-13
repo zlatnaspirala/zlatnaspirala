@@ -1,0 +1,13 @@
+/////////////////////////
+// zlatnaspirala 2.0 
+// api documentation
+/////////////////////////
+
+
+
+NEW_CUBE(ID,TXL,TYL,TZL,pointToTexture,scaleX,scaleY,scaleZ,Blend,RotBy,Angle,RotateSpeed,coalizion_triger)
+ID -> type : String
+TXL,TYL,TZL -> type : Float
+
+
+BALL(ID,TXL,TYL,TZL,RotBy,Angle,RotateSpeed,radius,latitudeBands,longitudeBands,coalizion_triger)
