@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+  http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd" xmlns:aop="http://www.springframework.org/schema/aop">
+
+	<bean id="jws.test0" class="org.jwebsocket.plugins.api.PlugInDefinition" scope="singleton">
+		<property name="id" value="jws.test0" />
+		<property name="namespace" value="org.jwebsocket.plugins.test" />
+		<property name="comment" value= "Plug-in for testing purpose" />
+		<property name="supportedTokens">
+			<set> 
+				
+				<bean class="org.jwebsocket.plugins.api.TokenDefinition">
+					<property name="type" value="broadcast" />
+					<property name="requestType" value="nr" />
+					<property name="comment" value="Broadcast a text to all the clients" />
+					<property name="inArguments">
+						<set>
+							<bean class="org.jwebsocket.plugins.api.TokenArgument">
+								<property name="name" value="text"/>
+								<property name="type" value="string"/>
+								<property name="comment" value="The text to broadcast"/>
+							</bean>
+						</set>
+					</property>
+				</bean>
+				
+				<bean class="org.jwebsocket.plugins.api.TokenDefinition">
+					<property name="type" value="complex_validation" />
+					<property name="comment" value="Return a complex object" />
+					<property name="outArguments">
+						<set>
+							<bean class="org.jwebsocket.plugins.api.TokenArgument">
+								<property name="name" value="name"/>
+								<property name="type" value="string"/>
+							</bean>
+							<bean class="org.jwebsocket.plugins.api.TokenArgument">
+								<property name="name" value="version"/>
+								<property name="type" value="double"/>
+							</bean>
+							<bean class="org.jwebsocket.plugins.api.TokenArgument">
+								<property name="name" value="team"/>
+								<property name="type" value="array"/>
+							</bean>
+							<bean class="org.jwebsocket.plugins.api.TokenArgument">
+								<property name="name" value="services"/>
+								<property name="type" value="object"/>
+							</bean>
+						</set>
+					</property>
+				</bean>
+				
+				<bean class="org.jwebsocket.plugins.api.TokenDefinition">
+					<property name="type" value="s2c_performance" />
+					<property name="comment" value="Test s2c performance using the broadcasting operation" />
+					<property name="inArguments">
+						<set>
+							<bean class="org.jwebsocket.plugins.api.TokenArgument">
+								<property name="name" value="message"/>
+								<property name="type" value="string"/>
+								<property name="testValue" value="'Hello world from jWebSocket!'"/>
+							</bean>
+							<bean class="org.jwebsocket.plugins.api.TokenArgument">
+								<property name="name" value="count"/>
+								<property name="type" value="integer"/>
+								<property name="testValue" value="100"/>
+							</bean>
+						</set>
+					</property>
+				</bean>
+				
+			</set>
+		</property>
+	</bean>
+ 
+
+</beans>

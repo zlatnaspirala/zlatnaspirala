@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+  http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="JcAuthPlugIn" class="org.jwebsocket.plugins.jc.AuthPlugIn" parent="AbstractPlugIn">
+		<property name="id" value="jc.auth" />
+		<property name="emEventClassesAndClientAPI">
+			<map>
+				<entry key="login" value="org.jwebsocket.plugins.jc.event.DoLogin"/>
+				<entry key="getUserInfo" value="org.jwebsocket.plugins.jc.event.GetUserInfo"/>
+				<entry key="terminalReady" value="org.jwebsocket.eventmodel.event.card.JcTerminalReady"/>
+				<entry key="terminalNotReady" value="org.jwebsocket.eventmodel.event.card.JcTerminalNotReady"/>
+			</map>
+		</property>
+		<property name="eventsDefinitions">
+			<set>
+				<bean parent="AbstractEventDefinition">
+					<property name="id" value="jc.login" />
+					<property name="ns" value="org.jwebsocket.plugins.jc.event.DoLogin" />
+				</bean>
+				<bean parent="AbstractEventDefinition">
+					<property name="id" value="jc.getuserinfo" />
+					<property name="ns" value="org.jwebsocket.plugins.jc.event.GetUserInfo" />
+					<property name="responseRequired" value="true" />
+					<property name="securityEnabled" value="true" />
+					<property name="roles">
+						<set>
+							<value>USER</value>
+						</set>
+					</property>
+				</bean>
+				<bean parent="AbstractEventDefinition">
+					<property name="id" value="jc.terminal.ready" />
+					<property name="ns" value="org.jwebsocket.eventmodel.event.card.JcTerminalReady" />
+					<property name="responseRequired" value="true" />
+					<property name="incomingArgsValidation">
+						<set>
+							<bean class="org.jwebsocket.eventmodel.filter.validator.Argument" >
+								<property name="name" value="terminal" />
+								<property name="type" value="string" />
+								<property name="optional" value="false" />
+							</bean>
+						</set>
+					</property>
+				</bean>
+				<bean parent="AbstractEventDefinition">
+					<property name="id" value="jc.terminal.notready" />
+					<property name="ns" value="org.jwebsocket.eventmodel.event.card.JcTerminalNotReady" />
+					<property name="responseRequired" value="true" />
+					<property name="incomingArgsValidation">
+						<set>
+							<bean class="org.jwebsocket.eventmodel.filter.validator.Argument" >
+								<property name="name" value="terminal" />
+								<property name="type" value="string" />
+								<property name="optional" value="false" />
+							</bean>
+						</set>
+					</property>
+				</bean>
+			</set>
+		</property>
+	</bean>
+</beans>
+
+				

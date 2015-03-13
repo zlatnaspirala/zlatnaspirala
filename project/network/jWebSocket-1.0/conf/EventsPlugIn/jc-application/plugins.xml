@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+  http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+	<!--  PlugIns-->
+	<bean abstract="true" id="AbstractPlugIn" depends-on="EventModel" init-method="initialize" destroy-method="shutdown" scope="singleton">
+		<property name="em" ref="EventModel" />
+	</bean>
+	
+	<bean id="AuthPlugIn" class="org.jwebsocket.eventmodel.plugin.auth.AuthPlugIn" parent="AbstractPlugIn">
+		<property name="id" value="auth" />
+		<property name="authenticationManager" ref="org.springframework.security.authenticationManager" />
+		<property name="emEventClassesAndClientAPI">
+			<map>
+				<entry key="logon" value="org.jwebsocket.eventmodel.event.auth.Logon"/>
+				<entry key="logoff" value="org.jwebsocket.eventmodel.event.auth.Logoff"/>
+			</map>
+		</property>
+	</bean>
+	
+	<bean id="SystemPlugIn" class="org.jwebsocket.eventmodel.plugin.system.SystemPlugIn" parent="AbstractPlugIn">
+		<property name="id" value="system" />
+		<property name="emEventClassesAndClientAPI">
+			<map>
+				<entry key="getPlugInAPI" value="org.jwebsocket.eventmodel.event.system.GetPlugInAPI"/>
+				<entry key="getPlugInList" value="org.jwebsocket.eventmodel.event.system.GetPlugInList"/>
+				<entry key="getPlugInList" value="org.jwebsocket.eventmodel.event.system.ClientCacheAspectStatus"/>
+				<entry key="hasPlugIn" value="org.jwebsocket.eventmodel.event.system.HasPlugIn"/>
+			</map>
+		</property>
+	</bean>
+	
+	<import resource="app-validators/importer.xml" />
+	<import resource="app-plugins/importer.xml" />
+	
+</beans>

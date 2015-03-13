@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<!-- this is the simple JDBC logger which logs to a SQL table -->
+	<bean id="targetJDBC" class="org.jwebsocket.plugins.logging.JDBCLogger">
+	</bean>
+
+	<!-- this is the simple log4j logger which logs to all targets configured in the log4j.xml -->
+	<bean id="targetLog4J" class="org.jwebsocket.plugins.logging.Log4JLogger">
+	</bean>
+
+	<!-- here you configure which logger of the above ones to use in the plug-in -->
+	<bean id="settings" class="org.jwebsocket.plugins.logging.Settings">
+		<property name="target" ref="targetLog4J"/>
+	</bean>
+
+</beans>

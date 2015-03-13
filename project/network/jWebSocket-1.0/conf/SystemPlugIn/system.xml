@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<!-- ####### STATIC authentication ####### -->
+	
+	<bean id="staticAuthProvider" class="org.springframework.security.authentication.dao.DaoAuthenticationProvider">
+		<property name="userDetailsService" ref="staticAuthUserDetailsService"/>
+		<!-- here we configure MD5 encryption of the passwords --> 
+		<!-- Remark the following line to use plain text passwords, NOT RECOMMENDED! --> 
+		<property name="passwordEncoder" ref="authPasswordEncoderMD5"/>
+
+		<!-- optional if you intent to use EhCache to cache user repository -->
+		<property name="userCache" ref="authUserCache"/>
+	</bean>
+
+	<bean id="staticAuthUserDetailsService" class="org.springframework.security.core.userdetails.memory.InMemoryDaoImpl">
+		<property name="userMap">
+			<!-- format: username=password,grantedAuthority[,grantedAuthority][,enabled|disabled] -->
+			<value>
+					guest=084e0343a0486ff05530df6c705c8bb4, ROLE_ADMIN_ROOT, enabled
+					user=ee11cbb19052e40b07aac0ca060c23ee, ROLE_EXTERNAL, ROLE_ADMIN_ROOT, enabled
+					root=63a9f0ea7bb98050796b649e85481845, ROLE_ADMIN_ROOT, enabled
+					admin=21232f297a57a5a743894a0e4a801fc3, ROLE_ADMIN_MAINTENANCE, enabled
+					alex=b7f490d7a94fd0a6f2e29f8fd1841a54, ROLE_ADMIN_ROOT, ROLE_ADMIN_MAINTENANCE, enabled
+					marta=bc15ab9a9d02322acb686e8c5b057993, ROLE_ADMIN_ROOT, ROLE_ADMIN_MAINTENANCE, enabled
+			</value>
+		</property>	
+	</bean>
+
+
+	<!-- ####### LDAP authentication ####### -->
+
+	<!-- http://springinpractice.com/2010/07/06/spring-security-database-schemas-for-mysql/ -->
+	<!-- http://www.springsource.com/files/AdvancedSpringSecurity_handout.pdf -->
+
+	<!-- for LDAP see: 
+		http://static.springsource.org/spring-security/site/docs/3.0.x/reference/ldap.html -->
+	<!-- hints for AD:
+		http://www.coderanch.com/t/525031/Spring/Spring-LDAP-Active-Directory-Security
+		http://www.opennms.org/wiki/Spring_Security_and_LDAP -->
+		
+	<!-- this specifies the user to auth against the directory service -->
+	<bean id="ldapContext" class="org.springframework.security.ldap.DefaultSpringSecurityContextSource">
+		<constructor-arg value="ldap://your.ldap.host:389"/>
+		<!-- specifiy bind user credentials here, this is the user which is allowed to access the directory server -->
+		<property name="userDn" value="user@domain.tld"/>
+		<property name="password" value="your.password"/>
+	</bean>
+			
+	<bean id="ldapUserSearch" class="org.springframework.security.ldap.search.FilterBasedLdapUserSearch">
+		<!-- specify the start node for searches here -->
+		<constructor-arg index="0" value="DC=domain,DC=tld" />
+		<!-- allow only users belonging to specific groups to get authenticated -->
+		<constructor-arg index="1" value="(&amp;(objectclass=user)(sAMAccountName={0}))"/>
+		<constructor-arg index="2" ref="ldapContext" />
+		<property name="searchSubtree" value="true" />
+	</bean>	
+
+	<bean id="ldapAuthenticator" class="org.springframework.security.ldap.authentication.BindAuthenticator">
+		<constructor-arg ref="ldapContext"/>
+		<property name="userSearch" ref="ldapUserSearch"/>
+	</bean>
+	
+	<!-- http://static.springsource.org/spring-security/site/docs/3.1.x/apidocs/org/springframework/security/ldap/userdetails/DefaultLdapAuthoritiesPopulator.html -->
+	<bean id="ldapAuthoritiesPopulator" class="org.springframework.security.ldap.userdetails.DefaultLdapAuthoritiesPopulator">
+		<constructor-arg ref="ldapContext"/>
+		<!-- the start node to search from -->
+		<constructor-arg value="OU=Groups,DC=domain,DC=tld"/>
+		<!-- the LDAP attrribute identifying the name of the group -->
+		<property name="groupRoleAttribute" value="cn"/>
+		<!-- if you like to, here you can add a prefix to the group in the directory service -->
+		<property name="rolePrefix" value=""/>
+		<!-- here you optionally can add a default role if no roles are found in the directory service -->
+		<!-- <property name="defaultRole" value="ROLE_ANOMYMOUS"/> -->
+		<property name="convertToUpperCase" value="false"/>
+		<!-- here you specifiy whether to search through subtrees of the directory service -->
+		<property name="searchSubtree" value="true"/>
+		<!-- this is a special spring security setting to ignore issues in MS' Active Directory -->
+		<property name="ignorePartialResultException" value="true"/>
+	</bean>
+	
+	<bean id="ldapAuthProvider" class="org.springframework.security.ldap.authentication.LdapAuthenticationProvider">
+		<constructor-arg ref="ldapAuthenticator"/>
+		<constructor-arg ref="ldapAuthoritiesPopulator"/>
+	</bean>
+	
+	
+	<!-- ####### JDBC authentication ####### -->
+	<!-- http://static.springsource.org/spring-security/site/docs/3.0.x/reference/core-services.html -->
+	<!-- http://grepcode.com/file/repo1.maven.org/maven2/org.springframework.security/spring-security-core/3.0.5.RELEASE/org/springframework/security/core/userdetails/jdbc/JdbcDaoImpl.java -->
+	
+	<bean id="jdbcAuthProvider" class="org.springframework.security.authentication.dao.DaoAuthenticationProvider">
+		<property name="userDetailsService" ref="jdbcAuthUserDetailsServicePermissions"/>
+		<!-- optional if you intent to use EhCache to cache user repository -->
+		<!-- <property name="userCache" ref="authUserCache"/> -->
+	</bean>
+
+	<bean id="jdbcAuthDataSource" destroy-method="close" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+		<property name="url" value="jdbc:mysql://localhost:3306/jwebsocket"/>
+		<property name="username" value="root"/>
+		<property name="password" value="root"/>
+	</bean>
+
+	<!-- authentication with groups only, may NOT be sufficient for jWebSocket Plug-ins -->
+	<bean id="jdbcAuthUserDetailsServiceAuthorities" class="org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl">
+		<property name="dataSource" ref="jdbcAuthDataSource"/>
+		<property name="enableGroups" value="false"/>
+		<property name="enableAuthorities" value="true"/>
+		<property name="authoritiesByUsernameQuery" value="
+			select users.loginname, roles.name
+			from demo_user_roles dur 
+			left join demo_roles roles on roles.role_id = dur.role_id 
+			left join demo_users users on users.user_id = dur.user_id 
+			where users.loginname = ?"/>
+		<property name="usersByUsernameQuery" value="
+			select loginname, password, enabled
+			from demo_users where loginname = ?"/>
+	</bean>	
+
+	<!-- authentication with groups only, RECOMMENDED for jWebSocket Plug-ins -->
+	<bean id="jdbcAuthUserDetailsServicePermissions" class="org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl">
+		<property name="dataSource" ref="jdbcAuthDataSource"/>
+		<property name="enableGroups" value="true"/>
+		<property name="enableAuthorities" value="false"/>
+		<property name="groupAuthoritiesByUsernameQuery" value="
+			select roles.role_id, roles.name, rights.name
+			from demo_users users
+			left join demo_user_roles ur on users.user_id = ur.user_id
+			left join demo_roles_rights rr on ur.role_id = rr.role_id
+			left join demo_roles roles on roles.role_id = rr.role_id
+			left join demo_rights rights on rights.right_id = rr.right_id
+			where users.loginname = ?"/>
+		<property name="authoritiesByUsernameQuery" value="
+			select users.loginname, roles.name
+			from demo_user_roles dur
+			left join demo_roles roles on roles.role_id = dur.role_id
+			left join demo_users users on users.user_id = dur.user_id
+			where users.loginname = ?"/>
+		<property name="usersByUsernameQuery" value="
+			select loginname, password, enabled from demo_users
+			where loginname = ?"/>
+	</bean>	
+
+	<!-- ####### optional caching with ehcache ####### -->
+	
+	<bean id="authUserCache" class="org.springframework.security.core.userdetails.cache.EhCacheBasedUserCache">	
+		<!-- use this one if running separate ehcache config -->
+		<!-- <property name="cache" ref="authCacheFactory"/> -->
+		
+		<!-- use this one if running jWebsocket internal ehcache config -->
+		<property name="cache" ref="authEhCacheManager"/>
+	</bean>
+
+	<!-- if using jWebSocket internal EhCache Manager ... -->
+	<bean id="authEhCacheManager" class="org.jwebsocket.storage.ehcache.EhCacheManager" factory-method="getCache">
+		<!-- ensure that cache with name "authUserCache" is specified in ehcache.xml -->
+		<constructor-arg value="authUserCache"/>
+	</bean>
+	
+	<!-- if using extra/separate EhCache Manager for Spring security... -->
+	<bean id="authCacheFactory" class="org.springframework.cache.ehcache.EhCacheFactoryBean">
+		<property name="cacheManager" ref="authCacheManager"/>
+		<property name="cacheName" value="authUserCache"/>
+	</bean>
+
+	<bean id="authCacheManager" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
+		<property name="configLocation" value="file:///${JWEBSOCKET_HOME}conf/SystemPlugIn/ehcache.xml"/>
+		<!-- property name="configLocation" value="classpath:/ehcache-failsafe.xml"/-->
+	</bean>
+	
+	<!-- ####### optional password hashing with MD5 hashs ####### -->
+	
+	<bean id="authPasswordEncoderMD5" class="org.springframework.security.authentication.encoding.Md5PasswordEncoder"/>
+
+	<!-- ####### initialization of authentication provider ####### -->
+	
+	<bean id="authManager" class="org.springframework.security.authentication.ProviderManager">
+		<property name="providers">
+			<list>
+				<!-- <ref local="ldapAuthProvider"/> -->
+				<!-- <ref local="jdbcAuthProvider"/> -->
+				<ref local="staticAuthProvider"/>
+			</list>
+		</property>
+	</bean>
+
+	<!-- ####### Setting up the global CacheManager ####### -->
+
+	<!--  EhCache Storage provider -->
+	<bean id="storageProviderEhCache" class="org.jwebsocket.storage.ehcache.EhCacheStorageProvider">
+	</bean>
+	
+	<!--  EhCache Cache Storage provider -->
+	<bean id="cacheStorageProviderEhCache" class="org.jwebsocket.cachestorage.ehcache.EhCacheCacheStorageProvider">
+	</bean>
+	
+	<!-- EhCache session 
+	<bean id="sessionManager" class="org.jwebsocket.session.SessionManager" 
+			init-method="initialize" destroy-method="shutdown">
+		<property name="storageProvider" ref="storageProviderEhCache"/>
+		<property name="reconnectionManager">
+			<bean class="org.jwebsocket.session.SessionReconnectionManager" 
+			init-method="initialize" destroy-method="shutdown">
+				<property name="cacheStorageName" value="__reconnection_index_ns__" />
+				<property name="sessionExpirationTime" value="60" />
+				<property name="trashStorageName" value="__session_ids_trash_storage_ns__" />
+				<property name="storageProvider" ref="storageProviderEhCache" />
+				<property name="cacheStorageProvider" ref="cacheStorageProviderEhCache" />
+			</bean>
+		</property>
+	</bean>
+	-->
+	
+	<!--  Memory Storage provider (here for the sessions) -->
+	<bean id="storageProviderMemory" class="org.jwebsocket.storage.memory.MemoryStorageProvider">
+	</bean>
+	<!--  Memory Storage provider (here for the sessions) -->
+	<bean id="cacheStorageProviderMemory" class="org.jwebsocket.cachestorage.memory.MemoryCacheStorageProvider">
+	</bean>
+
+	<!-- RAM Memory session -->
+	<bean id="sessionManager" class="org.jwebsocket.session.SessionManager" 
+			init-method="initialize" destroy-method="shutdown">
+		<property name="storageProvider" ref="storageProviderMemory"/>
+		<property name="reconnectionManager">
+			<bean class="org.jwebsocket.session.SessionReconnectionManager" 
+			init-method="initialize" destroy-method="shutdown">
+				<property name="cacheStorageName" value="__reconnection_index_ns__" />
+				<property name="sessionExpirationTime" value="60" />
+				<property name="trashStorageName" value="__session_ids_trash_storage_ns__" />
+				<property name="storageProvider" ref="storageProviderMemory"/>
+				<property name="cacheStorageProvider" ref="cacheStorageProviderMemory"/>
+			</bean>
+		</property>
+	</bean>
+	
+	<!-- MongoDB Database connection-->
+	<bean id="mongodbConnection0" class="com.mongodb.Mongo" destroy-method="close">
+	</bean>
+	
+	<!--  MongoDB Storage provider (here for the sessions) -->
+	<bean id="storageProviderMongoDB" class="org.jwebsocket.storage.mongodb.MongoDBStorageProvider">
+		<property name="con" ref="mongodbConnection0" />
+		<property name="databaseName" value="storages" />
+		<property name="collectionName" value="__storages_collection__" />
+	</bean>
+	
+	<!--  MongoDB Cache Storage provider (here for the sessions) -->
+	<bean id="cacheStorageProviderMongoDB" class="org.jwebsocket.cachestorage.mongodb.MongoDBCacheStorageProvider">
+		<property name="con" ref="mongodbConnection0" />
+		<property name="databaseName" value="cache_storages" />
+		<property name="collectionName" value="__cache_storages_collection__" />
+	</bean>
+	
+	<!-- MongoDB session 
+	<bean id="sessionManager" class="org.jwebsocket.session.SessionManager" 
+			init-method="initialize" destroy-method="shutdown">
+		<property name="storageProvider" ref="storageProviderMongoDB"/>
+		<property name="reconnectionManager">
+			<bean class="org.jwebsocket.session.SessionReconnectionManager" 
+			init-method="initialize" destroy-method="shutdown">
+				<property name="cacheStorageName" value="__reconnection_index_ns__" />
+				<property name="sessionExpirationTime" value="60" />
+				<property name="trashStorageName" value="__session_ids_trash_storage_ns__" />
+				<property name="storageProvider" ref="storageProviderMongoDB" />
+				<property name="cacheStorageProvider" ref="cacheStorageProviderMongoDB" />
+			</bean>
+		</property>
+	</bean>
+	-->
+
+</beans>

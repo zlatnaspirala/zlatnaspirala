@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<!-- use EhCache data store to store the mails, name is "mailstore" -->
+	<bean id="mailEhCacheStorage" class="org.jwebsocket.storage.ehcache.EhCacheStorage">
+		<constructor-arg value="mailstore"/>
+	</bean>
+
+	<!-- settings  for the mail plug-in -->
+	<bean id="settings" class="org.jwebsocket.plugins.mail.Settings">
+		
+		<!-- use this storage engine to store the mails -->
+		<property name="storage" ref="mailEhCacheStorage"/>
+		
+		<!-- CAUTION! SECURITY ADVISE!
+			 please take care that the following propertys do not get
+			 disclosed to anybody. Publishing this data will allow
+			 others to use your send and receive mails on behalf of you!
+		-->
+		<property name="smtpHost" value="#your smtp host (ip or hostname)#"/>
+		<property name="smtpPort" value="25"/>
+		<property name="smtpAuth" value="false"/>
+		<property name="smtpUser" value="#your smtp server's username#"/>
+		<property name="smtpPassword" value="#your smtp server's password#"/>
+		<property name="smtpPop3Before" value="false"/>
+		<property name="pop3Host" value="#your pop3 host (ip or hostname)#"/>
+		<property name="pop3Port" value="110"/>
+		<property name="pop3User" value="#your pop3 server's username#"/>
+		
+		<!-- root folder for temporary mail storage (e.g.for attachments -->
+		<!-- use the {username} variable to distinguish between user folders -->
+		<!-- the folders are automatically created on demand -->
+		<property name="mailRoot" value="${JWEBSOCKET_HOME}mails/{username}/"/>
+		<!-- configure the path to the rar executables 
+			 in case you want to autocreate mails for multivolume attachments 
+			 of the same size  -->
+		<property name="rarPath" value="/Applications/rar/rar"/>
+	</bean>
+
+</beans>

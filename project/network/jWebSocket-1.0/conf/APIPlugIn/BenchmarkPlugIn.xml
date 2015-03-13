@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd"
+	xmlns:aop="http://www.springframework.org/schema/aop">
+
+	<bean id="jws.benchmark" class="org.jwebsocket.plugins.api.PlugInDefinition" scope="singleton">
+		<property name="id" value="jws.benchmark" />
+		<property name="namespace" value="org.jwebsocket.plugins.benchmark" />
+		<property name="comment" value= "Plug-in for testing over various clients and servers" />
+		<property name="supportedTokens">
+			<set> 
+				
+				<bean class="org.jwebsocket.plugins.api.TokenDefinition">
+					<property name="type" value="s2c_performance" />
+					<property name="comment" value="Broadcast 1 messages to all connected clients." />
+					<property name="inArguments">
+						<set>
+							<bean class="org.jwebsocket.plugins.api.TokenArgument">
+								<property name="name" value="message"/>
+								<property name="type" value="string"/>
+								<property name="testValue" value="Hello world from jWebSocket!"/>
+							</bean>
+							<bean class="org.jwebsocket.plugins.api.TokenArgument">
+								<property name="name" value="count"/>
+								<property name="type" value="integer"/>
+								<property name="testValue" value="1"/>
+							</bean>
+						</set>
+					</property>
+				</bean>
+				
+			</set>
+		</property>
+	</bean>
+
+</beans>

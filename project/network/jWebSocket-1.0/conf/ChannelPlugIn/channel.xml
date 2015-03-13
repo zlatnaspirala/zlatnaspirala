@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<!-- ####### EhCache settings for channel plug-in ####### -->
+	   
+	<!-- ChannelStorage -->
+	<bean id="channelStorage" class="org.jwebsocket.storage.ehcache.EhCacheStorage">
+		<!-- ensure that cache with name "channelStore" is specified in ehcache.xml -->
+		<constructor-arg value="channelStore"/>
+	</bean>
+	<!-- Channel Subscribers -->
+	<bean id="subscriberStorage" class="org.jwebsocket.storage.ehcache.EhCacheStorage">
+		<!-- ensure that cache with name "channelSubscribers" is specified in ehcache.xml -->
+		<constructor-arg value="channelSubscribers"/>
+	</bean>
+	<!-- Channel Publishers -->
+	<bean id="publisherStorage" class="org.jwebsocket.storage.ehcache.EhCacheStorage">
+		<!-- ensure that cache with name "channelPublishers" is specified in ehcache.xml -->
+		<constructor-arg value="channelPublishers"/>
+	</bean>
+	
+	<bean id="channelManager" class="org.jwebsocket.plugins.channels.ChannelManager">
+		<constructor-arg>
+			<map>
+				<entry key="allow_new_channels">
+					<value>true</value>
+				</entry>
+				<entry key="channel:privateA">
+					<value>{owner:"root",name:"Private A",isPrivate:true ,isSystem:false,access_key:"access",secret_key:"secret"}</value>
+				</entry>
+				<entry key="channel:privateB">
+					<value>{owner:"root",name:"Private B",isPrivate:true ,isSystem:false,access_key:"access",secret_key:"secret"}</value>
+				</entry>
+				<entry key="channel:publicA">
+					<value>{owner:"root",name:"Public A" ,isPrivate:false,isSystem:false,access_key:"access",secret_key:"secret"}</value>
+				</entry>
+				<entry key="channel:publicB">
+					<value>{owner:"root",name:"Public B" ,isPrivate:false,isSystem:false,access_key:"access",secret_key:"secret"}</value>
+				</entry>
+				<entry key="channel:systemA">
+					<value>{owner:"root",name:"System A" ,isPrivate:false,isSystem:true ,access_key:"access",secret_key:"secret"}</value>
+				</entry>
+				<entry key="channel:systemB">
+					<value>{owner:"root",name:"System B" ,isPrivate:false,isSystem:true ,access_key:"access",secret_key:"secret"}</value>
+				</entry>
+			</map>
+		</constructor-arg>	
+		<constructor-arg ref="channelStorage"/>
+		<constructor-arg ref="subscriberStorage"/>
+		<constructor-arg ref="publisherStorage"/>
+	</bean>
+
+</beans>

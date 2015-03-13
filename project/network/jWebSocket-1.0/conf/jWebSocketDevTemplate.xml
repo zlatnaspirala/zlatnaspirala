@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jWebSocket>
+	<installation>prod</installation>
+	<protocol>json</protocol>
+	<node_id>01</node_id>
+	
+	<libraries>
+	</libraries>
+
+	<!-- jWebSocket logging configuration -->
+	<logging>
+		<log4j>
+			<config>${JWEBSOCKET_HOME}conf/log4j.xml</config>
+			<autoreload>20000</autoreload>
+		</log4j>
+	</logging>
+
+	<initializerClass>org.jwebsocket.factory.JWebSocketInitializer</initializerClass>
+
+	<engines>
+		<engine>
+			<name>org.jwebsocket.tcp.TCPEngine</name>
+			<id>tcp0</id>
+			<jar>jWebSocketTCPEngine-1.0.jar</jar>
+			<port>8787</port>
+			<sslport>9797</sslport>
+			<keystore>${JWEBSOCKET_HOME}conf/jWebSocket.ks</keystore>
+			<password>jWebSocket</password>
+			<domains>
+				<domain>http*://jwebsocket.org</domain>
+				<domain>http*://jwebsocket.com</domain>
+				<domain>http*://*.jwebsocket.org</domain>
+				<domain>http*://*.jwebsocket.com</domain>
+				<domain>http*://10.10.*</domain>
+				<domain>http*://10.21.*</domain>
+				<domain>http*://192.168.*</domain>
+				<domain>http*://localhost*</domain>
+			</domains>
+			<timeout>0</timeout>
+			<maxframesize>1048840</maxframesize>
+			<maxconnections>10000</maxconnections>
+			<onmaxconnections>reject</onmaxconnections>
+		</engine>
+	</engines>
+
+	<!-- server types to be instantiated for jWebSocket -->
+	<servers>
+		<server>
+			<name>org.jwebsocket.server.TokenServer</name>
+			<id>ts0</id>
+			<jar>jWebSocketTokenServer-1.0.jar</jar>
+			<threadPool>
+				<corePoolSize>10</corePoolSize>
+				<maximumPoolSize>100</maximumPoolSize>
+				<keepAliveTime>60</keepAliveTime>
+				<blockingQueueSize>1000</blockingQueueSize>
+			</threadPool>
+		</server>
+	</servers>
+
+	<!-- jWebSocket global rights -->
+	<rights>
+		<right>
+			<ns>org.jwebsocket.plugins.system</ns>
+			<id>broadcast</id>
+			<description>Broadcast message to all other clients.</description>
+		</right>
+		<right>
+			<ns>org.jwebsocket.plugins.system</ns>
+			<id>send</id>
+			<description>Send message to a single target client.</description>
+		</right>
+	</rights>
+
+	<!-- jWebSocket roles -->
+	<roles>
+		<role>
+			<id>Administrator</id>
+			<description>Administrators</description>
+			<rights>
+				<!-- list of rights for "Administrator" role (ns + . + id) -->
+				<right>org.jwebsocket.plugins.system.broadcast</right>
+				<right>org.jwebsocket.plugins.system.send</right>
+			</rights>
+		</role>
+		<role>
+			<id>User</id>
+			<description>Registered and authenticated users.</description>
+			<rights>
+				<!-- list of rights for "User" role (ns + . + id) -->
+				<right>org.jwebsocket.plugins.system.broadcast</right>
+				<right>org.jwebsocket.plugins.system.send</right>
+			</rights>
+		</role>
+		<role>
+			<id>Guest</id>
+			<description>Anonymous users (not registered)</description>
+			<rights>
+				<!-- list of rights for "Guest" role (ns + . + id) -->
+				<right>org.jwebsocket.plugins.system.broadcast</right>
+				<right>org.jwebsocket.plugins.system.send</right>
+			</rights>
+		</role>
+	</roles>
+
+	<users>
+		<user>
+			<uuid>000-000-001-2011-07-14-11-32-40-223</uuid>
+			<loginname>guest</loginname>
+			<firstname>jWebSocket Guest User</firstname>
+			<lastname>(Guest Role)</lastname>
+			<password>guest</password>
+			<description>jWebSocket Guest User</description>
+			<status>1</status>
+			<roles>
+				<role>Guest</role>
+			</roles>
+		</user>
+		<user>
+			<uuid>000-000-002-2011-07-14-11-33-20-493</uuid>
+			<loginname>user</loginname>
+			<firstname>jWebSocket Authenticated User</firstname>
+			<lastname>(User Role)</lastname>
+			<password>user</password>
+			<description>jWebSocket Standard User</description>
+			<status>1</status>
+			<roles>
+				<role>Guest</role>
+				<role>User</role>
+			</roles>
+		</user>
+		<user>
+			<uuid>000-000-003-2011-07-14-11-34-17-189</uuid>
+			<loginname>root</loginname>
+			<firstname>jWebSocket Root User</firstname>
+			<lastname>(Administrator Role)</lastname>
+			<password>root</password>
+			<description>jWebSocket Root User</description>
+			<status>1</status>
+			<roles>
+				<role>Guest</role>
+				<role>User</role>
+				<role>Administrator</role>
+			</roles>
+		</user>
+		<user>
+			<uuid>000-000-004-2011-07-14-11-35-54-871</uuid>
+			<loginname>anonymous</loginname>
+			<firstname>jWebSocket Anonymous User</firstname>
+			<lastname>(Roles to be specified!)</lastname>
+			<password></password>
+			<description>jWebSocket Anonymous User (Specify if anonymous logins should be supported at all in System Plug-in)</description>
+			<status>1</status>
+			<roles>
+				<role>Guest</role>
+				<role>User</role>
+				<role>Administrator</role>
+			</roles>
+		</user>
+	</users>
+
+	<plugins>
+		<plugin>
+			<name>org.jwebsocket.plugins.system.SystemPlugIn</name>
+			<ns>org.jwebsocket.plugins.system</ns>
+			<id>jws.system</id>
+			<jar>jWebSocketServer-1.0.jar</jar>
+			<settings>
+				<setting key="spring_config">${JWEBSOCKET_HOME}conf/SystemPlugIn/system.xml</setting>
+				<setting key="broadcastOpenEvent">true</setting>
+				<setting key="broadcastCloseEvent">true</setting>
+				<setting key="broadcastLoginEvent">true</setting>
+				<setting key="broadcastLogoutEvent">true</setting>
+				<setting key="allowAnonymousLogin">true</setting>
+				<setting key="anonymousLoginName">anonymous</setting>
+				<setting key="loginNameCaseInsensitive">true</setting>
+				<setting key="allowAutoAnonymous">true</setting>
+			</settings>
+			<server-assignments>
+				<server-assignment>ts0</server-assignment>
+			</server-assignments>
+		</plugin>
+
+		<plugin>
+			<name>org.jwebsocket.plugins.flashbridge.FlashBridgePlugIn</name>
+			<id>jws.flashbridge</id>
+			<ns>org.jwebsocket.plugins.flashbridge</ns>
+			<jar>jWebSocketServer-1.0.jar</jar>
+			<server-assignments>
+				<server-assignment>ts0</server-assignment>
+			</server-assignments>
+			<settings>
+				<!-- if you remove this setting the plug-in uses an internal
+				     "allow all ports and domains" default crossdomain.xml -->
+				<setting key="crossdomain_xml">${JWEBSOCKET_HOME}conf/FlashPlugIn/crossdomain.xml</setting>
+			</settings>
+		</plugin>
+
+	</plugins>
+
+	<filters>
+		<filter>
+			<name>org.jwebsocket.filters.system.SystemFilter</name>
+			<id>jws.sampleFilter</id>
+			<ns>org.jwebsocket.filters.system</ns>
+			<jar>jWebSocketServer-1.0.jar</jar>
+			<server-assignments>
+				<server-assignment>ts0</server-assignment>
+			</server-assignments>
+		</filter>
+	</filters>
+
+</jWebSocket>

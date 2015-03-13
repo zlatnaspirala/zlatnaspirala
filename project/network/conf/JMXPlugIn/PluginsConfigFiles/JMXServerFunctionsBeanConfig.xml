@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" 
+      "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+    <bean id="JMXServerFunctions" class="org.jwebsocket.plugins.jmx.configdefinition.JMXDefinition">
+       <property name="description" value="This MBean allow to execute some important functionalities of the jWebSocket server."/>
+       <property name="className" value="org.jwebsocket.plugins.jmx.JMXServerFunctions"/>
+       <property name="jarName" value="jWebSocketJMXPlugIn-1.0.jar"/>
+       <property name="operations">
+           <set>
+               <bean id="allConnectors" class="org.jwebsocket.plugins.jmx.configdefinition.OperationDefinition">
+                   <property name="name" value="allConnectors"/>
+                   <property name="impact" value="INFO"/>
+                   <property name="returnValueType" value="javax.management.openmbean.CompositeData"/>
+                   <property name="description" value="This operation shows the main data of all connectors from a jWebSocket server."/>
+                   <property name="parameters">
+					<set>
+						<bean id="serverIdParameter" class="org.jwebsocket.plugins.jmx.configdefinition.ParameterDefinition">
+							<property name ="name" value="serverId"/>
+							<property name ="description" value="The Id of the server to show all connections."/>
+							<property name ="type" value="java.lang.String"/>
+						</bean>
+					</set>
+                   </property>
+               </bean>
+               <bean id="getServers" class="org.jwebsocket.plugins.jmx.configdefinition.OperationDefinition">
+                   <property name="name" value="getServers"/>
+                   <property name="impact" value="INFO"/>
+                   <property name="returnValueType" value="javax.management.openmbean.CompositeData"/>
+                   <property name="description" value="This operation shows the main data of all servers from jWebSocket."/>
+               </bean>
+               <bean id="getPlugIns" class="org.jwebsocket.plugins.jmx.configdefinition.OperationDefinition">
+                   <property name="name" value="getPlugIns"/>
+                   <property name="impact" value="INFO"/>
+                   <property name="returnValueType" value="javax.management.openmbean.CompositeData"/>
+                   <property name="description" value="This operation shows the main data of all plugIns from each jWebSocket server."/>
+               </bean>
+               <bean id="getFilters" class="org.jwebsocket.plugins.jmx.configdefinition.OperationDefinition">
+                   <property name="name" value="getFilters"/>
+                   <property name="impact" value="INFO"/>
+                   <property name="returnValueType" value="javax.management.openmbean.CompositeData"/>
+                   <property name="description" value="This operation shows the main data of all filters from each jWebSocket server."/>
+               </bean>
+               <bean id="getEngine" class="org.jwebsocket.plugins.jmx.configdefinition.OperationDefinition">
+                   <property name="name" value="getEngine"/>
+                   <property name="impact" value="INFO"/>
+                   <property name="returnValueType" value="javax.management.openmbean.CompositeData"/>
+                   <property name="description" value="This operation shows the main data of the engine running in jWebSocket server."/>
+               </bean>
+               <bean id="getInstanceInfo" class="org.jwebsocket.plugins.jmx.configdefinition.OperationDefinition">
+                   <property name="name" value="getInstanceInfo"/>
+                   <property name="impact" value="INFO"/>
+                   <property name="returnValueType" value="javax.management.openmbean.CompositeData"/>
+                   <property name="description" value="This operation shows the main data of the current node."/>
+               </bean>
+           </set>
+       </property>
+       <property name="constructors">
+			<set>
+               <bean id="JmxServerConstructor" class="org.jwebsocket.plugins.jmx.configdefinition.ConstructorDefinition">
+					<property name="name" value="JMXServerFunctions"/>
+					<property name="description" value="The default constructor of the JMXServerFunctions class."/>
+               </bean>
+           </set>
+       </property>
+    </bean>    
+</beans>

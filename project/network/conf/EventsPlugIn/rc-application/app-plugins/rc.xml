@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+  http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="ArduinoRemoteControlPlugIn" class="org.jwebsocket.plugins.arduino.ArduinoRemoteControlPlugIn" parent="AbstractPlugIn">
+		<!-- configure the port of the Arduino Device here -->
+		<!-- COM0...COM4 for Windows -->
+		<!-- On Mac OSX something like /dev/tty.usbmodemfd141 -->
+		<!-- On Linux something like /dev/ttyUSB0, /dev/ttyUSB1 or similar -->
+		<constructor-arg><value>/dev/tty.usbmodemfd141</value></constructor-arg>
+
+		<property name="id" value="rc" />
+		<property name="emEventClassesAndClientAPI">
+			<map>
+				<entry key="command" value="org.jwebsocket.plugins.arduino.event.c2s.Command"/>
+				<entry key="startrc" value="org.jwebsocket.plugins.arduino.event.c2s.StartArduinoRemoteControl"/>
+			</map>
+		</property>
+		<property name="eventsDefinitions">
+			<set>
+				<bean parent="AbstractEventDefinition">
+					<property name="id" value="rc.startrc" />
+					<property name="ns" value="org.jwebsocket.plugins.arduino.event.c2s.StartArduinoRemoteControl" />
+					<property name="responseRequired" value="true" />
+					<property name="responseToOwnerConnector" value="true" />
+				</bean>
+               
+				<bean parent="AbstractEventDefinition">
+					<property name="id" value="rc.command" />
+					<property name="ns" value="org.jwebsocket.plugins.arduino.event.c2s.Command" />
+					<property name="responseRequired" value="true" />
+					<property name="responseToOwnerConnector" value="true" />
+					<property name="incomingArgsValidation">
+						<set>
+							<bean class="org.jwebsocket.eventmodel.filter.validator.Argument" >
+								<property name="name" value="cmd" />
+								<property name="type" value="integer" />
+								<property name="optional" value="false" />
+							</bean>
+						</set>
+					</property> 
+                
+				</bean>
+                		
+			</set>
+		</property>
+	</bean>	
+</beans>
+
+
+				

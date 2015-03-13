@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<bean id="settings" class="org.jwebsocket.plugins.filesystem.Settings">
+		<property name="aliases">
+			<map>
+				<!-- folder alias for private user data -->
+				<entry>
+					<key><value>privateDir</value></key>
+					<value>${JWEBSOCKET_HOME}users/{username}/</value>
+				</entry>
+				<!-- folder alias for shared public data -->
+				<entry>
+					<key><value>publicDir</value></key>
+					<value>${JWEBSOCKET_HOME}public/</value>
+				</entry>                
+				<!-- folder alias for reports (.jrxml), used by reporting plug-in -->
+				<entry>
+					<key><value>reportRoot</value></key>
+					<value>${JWEBSOCKET_HOME}reports</value>
+				</entry>                
+			</map>
+		</property>
+	</bean>
+</beans>

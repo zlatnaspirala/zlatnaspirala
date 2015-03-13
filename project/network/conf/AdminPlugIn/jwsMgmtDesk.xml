@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Document   : jwsMgmtDesk.xml
+	Created on : Febrary 1, 2012, 11:24 AM
+	Author     : Marcos Antonio González Huerta (markos0886, UCI)
+	Description: Configuration of the jWebSocket Management Desk.
+	This includes plug-ins and filter that has been removed
+-->
+<!-- jWebSocket Management Desk configuration -->
+<jWebSocket>
+  <!-- plug-ins -->
+  <plugins />
+  <!-- filters -->
+  <filters />
+</jWebSocket>
+

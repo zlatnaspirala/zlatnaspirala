@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+  http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+  
+	<!-- Event Definitions-->
+	<bean id="AbstractEventDefinition" abstract="true" class="org.jwebsocket.eventmodel.event.C2SEventDefinition"
+		init-method="initialize" destroy-method="shutdown" scope="singleton">
+	</bean>
+	
+	<bean id="EventDefinitionManager" class="org.jwebsocket.eventmodel.event.C2SEventDefinitionManager"
+	init-method="initialize" scope="singleton">
+		<property name="definitions">
+			<set>
+				<bean parent="AbstractEventDefinition">
+					<property name="id" value="connector.started" />
+					<property name="ns" value="org.jwebsocket.eventmodel.event.em.ConnectorStarted" />
+				</bean>
+				<bean parent="AbstractEventDefinition">
+					<property name="id" value="connector.stopped" />
+					<property name="ns" value="org.jwebsocket.eventmodel.event.em.ConnectorStopped" />
+				</bean>
+				<bean parent="AbstractEventDefinition">
+					<property name="id" value="engine.started" />
+					<property name="ns" value="org.jwebsocket.eventmodel.event.em.EngineStarted" />
+				</bean>
+				<bean parent="AbstractEventDefinition">
+					<property name="id" value="engine.stopped" />
+					<property name="ns" value="org.jwebsocket.eventmodel.event.em.EngineStopped" />
+				</bean>
+				<bean parent="AbstractEventDefinition">
+					<property name="id" value="before.process.event" />
+					<property name="ns" value="org.jwebsocket.eventmodel.event.em.BeforeProcessEvent" />
+				</bean>
+				<bean parent="AbstractEventDefinition">
+					<property name="id" value="after.process.event" />
+					<property name="ns" value="org.jwebsocket.eventmodel.event.em.AfterProcessEvent" />
+				</bean>
+				
+				<!--S2CEventNotificationHandler Events Definition-->
+				<bean parent="AbstractEventDefinition">
+					<property name="id" value="s2c.r" />
+					<property name="ns" value="org.jwebsocket.eventmodel.event.em.S2CResponse" />
+				</bean>
+				<bean parent="AbstractEventDefinition">
+					<property name="id" value="s2c.ens" />
+					<property name="ns" value="org.jwebsocket.eventmodel.event.em.S2CEventNotSupportedOnClient" />
+				</bean>
+				
+				<!--AuthPlugIn Events Definition-->
+				<bean parent="AbstractEventDefinition">
+					<property name="id" value="auth.logon" />
+					<property name="ns" value="org.jwebsocket.eventmodel.event.auth.Logon" />
+					<property name="responseRequired" value="true" />
+					<property name="responseToOwnerConnector" value="true" />
+					<property name="incomingArgsValidation">
+						<set>
+							<bean class="org.jwebsocket.eventmodel.filter.validator.Argument" >
+								<property name="name" value="username" />
+								<property name="type" value="string" />
+								<property name="optional" value="false" />
+							</bean>
+							<bean class="org.jwebsocket.eventmodel.filter.validator.Argument" >
+								<property name="name" value="password" />
+								<property name="type" value="string" />
+								<property name="optional" value="false" />
+							</bean>
+						</set>
+					</property >
+					<property name="outgoingArgsValidation">
+						<set>
+							<bean class="org.jwebsocket.eventmodel.filter.validator.Argument" >
+								<property name="name" value="username" />
+								<property name="type" value="string" />
+								<property name="optional" value="false" />
+							</bean>
+							<bean class="org.jwebsocket.eventmodel.filter.validator.Argument" >
+								<property name="name" value="uuid" />
+								<property name="type" value="string" />
+								<property name="optional" value="false" />
+							</bean>
+							<bean class="org.jwebsocket.eventmodel.filter.validator.Argument" >
+								<property name="name" value="roles" />
+								<property name="type" value="array" />
+								<property name="optional" value="false" />
+							</bean>
+						</set>
+					</property >
+				</bean>
+				<bean parent="AbstractEventDefinition">
+					<property name="id" value="auth.logoff" />
+					<property name="ns" value="org.jwebsocket.eventmodel.event.auth.Logoff" />
+					<property name="responseRequired" value="true" />
+					<property name="responseToOwnerConnector" value="true" />
+					<property name="securityEnabled" value="true" />
+					<property name="roles">
+						<set>
+							<value>USER</value>
+						</set>
+					</property>
+				</bean>
+
+				<!-- SystemPlugIn Events Definition-->
+				<bean parent="AbstractEventDefinition">
+					<property name="id" value="plugin.getapi" />
+					<property name="ns" value="org.jwebsocket.eventmodel.event.system.GetPlugInAPI" />
+					<property name="responseRequired" value="true" />
+					<property name="responseToOwnerConnector" value="true" />
+					<property name="incomingArgsValidation">
+						<set>
+							<bean class="org.jwebsocket.eventmodel.filter.validator.Argument" >
+								<property name="name" value="plugin_id" />
+								<property name="type" value="string" />
+								<property name="optional" value="false" />
+							</bean>
+						</set>
+					</property >
+					<property name="outgoingArgsValidation">
+						<set>
+							<bean class="org.jwebsocket.eventmodel.filter.validator.Argument" >
+								<property name="name" value="id" />
+								<property name="type" value="string" />
+								<property name="optional" value="false" />
+							</bean>
+							<bean class="org.jwebsocket.eventmodel.filter.validator.Argument" >
+								<property name="name" value="api" />
+								<property name="type" value="object" />
+								<property name="optional" value="false" />
+							</bean>
+						</set>
+					</property>
+				</bean>
+				<bean parent="AbstractEventDefinition">
+					<property name="id" value="plugin.getlist" />
+					<property name="ns" value="org.jwebsocket.eventmodel.event.system.GetPlugInList" />
+					<property name="responseRequired" value="true" />
+					<property name="responseToOwnerConnector" value="true" />
+					<property name="cacheEnabled" value="true" />
+					<property name="cacheTime" value="3600" />
+					<property name="outgoingArgsValidation">
+						<set>
+							<bean class="org.jwebsocket.eventmodel.filter.validator.Argument" >
+								<property name="name" value="identifiers" />
+								<property name="type" value="array" />
+								<property name="optional" value="false" />
+							</bean>
+						</set>
+					</property>
+				</bean>
+				<bean parent="AbstractEventDefinition">
+					<property name="id" value="clientcacheaspect.setstatus" />
+					<property name="ns" value="org.jwebsocket.eventmodel.event.system.ClientCacheAspectStatus" />
+					<property name="incomingArgsValidation">
+						<set>
+							<bean class="org.jwebsocket.eventmodel.filter.validator.Argument" >
+								<property name="name" value="enabled" />
+								<property name="type" value="boolean" />
+								<property name="optional" value="false" />
+							</bean>
+						</set>
+					</property>
+				</bean>
+				<bean parent="AbstractEventDefinition">
+					<property name="id" value="plugin.has" />
+					<property name="ns" value="org.jwebsocket.eventmodel.event.system.HasPlugIn" />
+					<property name="responseRequired" value="true" />
+					<property name="responseToOwnerConnector" value="true" />
+					<property name="cacheEnabled" value="true" />
+					<property name="cacheTime" value="3600" />
+					<property name="incomingArgsValidation">
+						<set>
+							<bean class="org.jwebsocket.eventmodel.filter.validator.Argument" >
+								<property name="name" value="plugin_id" />
+								<property name="type" value="string" />
+								<property name="optional" value="false" />
+							</bean>
+						</set>
+					</property>
+				</bean>		
+			</set>
+		</property>
+	</bean>
+
+</beans>

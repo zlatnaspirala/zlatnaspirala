@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:amq="http://activemq.apache.org/schema/core" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans.xsd 
+http://activemq.apache.org/schema/core http://activemq.apache.org/schema/core/activemq-core.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- an embedded broker -->
+	<!-- bean id="broker" class="org.apache.activemq.xbean.BrokerFactoryBean">
+		<property name="config" value="file:conf/activemq.xml" />
+	</bean-->
+
+	<!-- JMS ConnectionFactory to use -->
+	<bean id="amqFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+		<property name="brokerURL" value="tcp://0.0.0.0:61616" />
+		<property name="useAsyncSend" value="true" />
+	</bean>
+
+	<bean id="connectionFactory"
+		class="org.springframework.jms.connection.SingleConnectionFactory">
+		<property name="targetConnectionFactory" ref="amqFactory" />
+	</bean>
+
+	<!-- amq:broker useJmx="false" persistent="false"> <amq:transportConnectors> 
+		<amq:transportConnector uri="tcp://localhost:61616" /> </amq:transportConnectors> 
+		</amq:broker> <amq:connectionFactory id="connectionFactory" brokerURL="vm://localhost?broker.persistent=false" 
+		useAsyncSend="true" / -->
+	<amq:queue id="testQueue" physicalName="test.queue" />
+	<amq:topic id="testTopic" physicalName="test.topic" />
+	<amq:topic id="stockTopic" physicalName="stock.topic" />
+</beans>

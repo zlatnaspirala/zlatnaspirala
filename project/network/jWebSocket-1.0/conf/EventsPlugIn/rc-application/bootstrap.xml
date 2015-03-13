@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+  http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<!--  Event Definitions-->
+	<import resource="event_definitions.xml" />
+	<import resource="filters.xml" />
+	<import resource="plugins.xml" />
+	<import resource="security.xml" />
+
+	<!-- Core -->
+	<bean id="EventModel" class="org.jwebsocket.eventmodel.core.EventModel"
+		init-method="initialize" destroy-method="shutdown" scope="singleton"
+		depends-on="S2CEventNotificationHandler">
+	
+		<!--  Application namespace (required) -->
+		<constructor-arg value="rc"/>
+
+		<property name="env" value="dev" />
+		<property name="eventFactory" ref="EventFactory" />
+		<property name="exceptionHandler">
+			<bean class="org.jwebsocket.eventmodel.exception.ExceptionHandler"
+				scope="singleton" init-method="initialize" destroy-method="shutdown" />
+		</property>
+		<property name="filterChain">
+			<set>
+				<ref bean="RouterFilter" />
+				<ref bean="SecurityFilter" />
+				<ref bean="CacheFilter" />
+				<ref bean="ValidatorFilter" />
+				<ref bean="AnnotationFilter" />
+			</set>
+		</property>
+		<property name="plugIns">
+			<set>
+				<ref bean="AuthPlugIn" />
+				<ref bean="SystemPlugIn" />
+				<ref bean="ArduinoRemoteControlPlugIn" />
+			</set>
+		</property>
+	</bean>
+	
+	<!-- WebSocket events factory-->
+	<bean id="EventFactory" class="org.jwebsocket.eventmodel.factory.EventFactory"
+	scope="singleton" depends-on="EventDefinitionManager">
+		<property name="eventDefinitions" ref="EventDefinitionManager" />
+		<property name="em" ref="EventModel" />
+	</bean>
+
+	<!-- Cache Manager (Ehcache) -->
+	<bean id="CacheManager" class="net.sf.ehcache.CacheManager" scope="singleton" >
+	</bean>
+
+	<!-- Generic types support-->
+	<bean id="TypesMap" class="org.jwebsocket.eventmodel.filter.validator.TypesMap">
+		<property name="types">
+			<map>
+				<entry key="string" value="java.lang.String" />
+				<entry key="boolean" value="java.lang.Boolean" />
+				<entry key="number" value="java.lang.Double" />
+				<entry key="double" value="java.lang.Double" />
+				<entry key="integer" value="java.lang.Integer" />
+				<entry key="array" value="java.util.Collection" />
+				<entry key="object" value="org.jwebsocket.token.Token" />
+				<entry key="list" value="java.util.List" />
+			</map>
+		</property>
+	</bean>
+	
+    <!-- S2CEventNotificationHandler-->
+	<bean id="S2CEventNotificationHandler" class="org.jwebsocket.eventmodel.s2c.S2CEventNotificationHandler"
+	init-method="initialize" destroy-method="shutdown" scope="singleton">
+		<property name="em" ref="EventModel" />
+		<property name="typesMap" ref="TypesMap" />
+	</bean>
+
+	<!-- Database connection-->
+	<bean id="MongoDBConnection0" class="com.mongodb.Mongo" destroy-method="close">
+	</bean>
+	
+	<bean id="MongoDBStorageBuilder0" class="org.jwebsocket.storage.mongodb.MongoDBStorageBuilder">
+		<property name="con" ref="MongoDBConnection0" />
+		<property name="databaseName" value="storages" />
+		<property name="collectionName" value="__v1_storages_collection__" />
+	</bean>
+	
+	<bean id="MongoDBCacheStorageBuilder0" class="org.jwebsocket.cachestorage.mongodb.MongoDBCacheStorageBuilder">
+		<property name="con" ref="MongoDBConnection0" />
+		<property name="databaseName" value="cache_storages" />
+		<property name="collectionName" value="__v1_cache_storages_collection__" />
+	</bean>
+</beans>

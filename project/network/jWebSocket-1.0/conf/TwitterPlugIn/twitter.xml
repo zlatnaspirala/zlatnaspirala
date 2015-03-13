@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<!-- CAUTION! SECURITY ADVISE!
+		 please take care that the following settings do not get
+		 disclosed to anybody. Publishing this data will allow
+		 others to use your account to use Twitter on behalf of you!
+	-->
+	<bean id="settings" class="org.jwebsocket.plugins.twitter.Settings">
+		<property name="consumerKey" value="#your consumer key you obtain from Twitter for you app#"/>
+		<property name="consumerSecret" value="#your consumer secret you obtain from Twitter for you app#"/>
+		<!-- the app id you obatin when first requesting your access token -->
+		<property name="appKey" value="123456789"/>
+		<!-- the access key you obtain from the jWebSocket Twitter tool -->
+		<property name="accessKey" value="123456789-#your access key#"/>
+		<property name="accessSecret" value="#the access secret you obtain from the jWebSocket Twitter tool#"/>
+	</bean>
+
+</beans>

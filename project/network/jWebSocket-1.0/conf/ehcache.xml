@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache
+	updateCheck="false"
+	monitoring="autodetect"
+	dynamicConfig="true">
+	<diskStore path="${JWEBSOCKET_HOME}/cache"/>
+	
+	<!-- find a full documentation of options here: http://www.ehcache.org/ehcache.xml -->
+	<defaultCache
+		maxElementsInMemory="10000"
+		eternal="false"
+		timeToIdleSeconds="0"
+		timeToLiveSeconds="0"
+		overflowToDisk="true"
+		maxElementsOnDisk="10000000"
+		diskPersistent="false"
+		diskExpiryThreadIntervalSeconds="120"
+		memoryStoreEvictionPolicy="LRU"
+	/>
+	
+	<!-- cache config for channel plug-in -->
+	<cache name="channelStore"
+		maxElementsInMemory="100"
+		eternal="false"
+		timeToIdleSeconds="0"
+		timeToLiveSeconds="0"
+		overflowToDisk="true"
+		maxElementsOnDisk="10000000"
+		diskPersistent="false"
+		diskExpiryThreadIntervalSeconds="120"
+		memoryStoreEvictionPolicy="LRU"
+	/>
+	<cache name="channelSubscribers"
+		maxElementsInMemory="10000"
+		eternal="false"
+		timeToIdleSeconds="0"
+		timeToLiveSeconds="0"
+		overflowToDisk="true"
+		maxElementsOnDisk="10000000"
+		diskPersistent="false"
+		diskExpiryThreadIntervalSeconds="120"
+		memoryStoreEvictionPolicy="LRU"
+	/>
+	<cache name="channelPublishers"
+		maxElementsInMemory="10000"
+		eternal="false"
+		timeToIdleSeconds="0"
+		timeToLiveSeconds="0"
+		overflowToDisk="true"
+		maxElementsOnDisk="10000000"
+		diskPersistent="false"
+		diskExpiryThreadIntervalSeconds="120"
+		memoryStoreEvictionPolicy="LRU"
+	/>
+	
+	<!-- cache config for mail plug-in -->
+	<cache name="mailStore"
+		maxElementsInMemory="1"
+		eternal="true"
+		timeToIdleSeconds="0"
+		timeToLiveSeconds="0"
+		overflowToDisk="true"
+		maxElementsOnDisk="10000000"
+		diskPersistent="false"
+		diskExpiryThreadIntervalSeconds="120"
+		memoryStoreEvictionPolicy="LRU"
+	/>
+	
+	<!-- cache config for system plug-in -->
+	<cache name="authUserCache"
+       maxElementsInMemory="20" 
+       eternal="false"
+       timeToIdleSeconds="300" 
+       timeToLiveSeconds="300" 
+       overflowToDisk="true"
+       maxElementsOnDisk="100000" 
+       diskPersistent="false"
+       diskExpiryThreadIntervalSeconds="300" 
+       memoryStoreEvictionPolicy="LRU"/>
+	   
+	<cache name="sessionCache"
+		maxElementsInMemory="1"
+		eternal="true"
+		timeToIdleSeconds="0"
+		timeToLiveSeconds="0"
+		overflowToDisk="true"
+		maxElementsOnDisk="10000000"
+		diskPersistent="false"
+		diskExpiryThreadIntervalSeconds="120"
+		memoryStoreEvictionPolicy="LRU"/>
+	   
+</ehcache>

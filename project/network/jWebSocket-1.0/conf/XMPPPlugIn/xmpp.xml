@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<!-- settings  for the xmpp plug-in -->
+	<bean id="settings" class="org.jwebsocket.plugins.xmpp.Settings">
+		<!-- CAUTION! SECURITY ADVISE!
+			please take care that the following propertys do not get
+			disclosed to anybody. Publishing this data will allow
+			others to act on behalf of you!
+		-->
+		<!-- <property name="" value=""></property> -->
+	</bean>
+	
+</beans>

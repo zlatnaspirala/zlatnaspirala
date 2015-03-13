@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd"
+	xmlns:aop="http://www.springframework.org/schema/aop">
+
+	<bean id="jws.api" class="org.jwebsocket.plugins.api.PlugInDefinition" scope="singleton">
+		<property name="id" value="jws.api" />
+		<property name="namespace" value="org.jwebsocket.plugins.api" />
+		<property name="comment" value= "jWebSockt plug-in to export the server API" />
+		<property name="supportedTokens">
+			<set>
+				<bean class="org.jwebsocket.plugins.api.TokenDefinition">
+					<property name="type" value="hasPlugin" />
+					<property name="comment" value="Giving a custom plug-in identifier 'plugin_id' return TRUE if it exists, FALSE otherwise. Use the 'has' response property for the return value" />
+					<property name="inArguments">
+						<set>
+							<bean class="org.jwebsocket.plugins.api.TokenArgument">
+								<property name="name" value="plugin_id"/>
+								<property name="type" value="string"/>
+								<property name="comment" value="The plug-in identifier argument"/>
+								<property name="testValue" value="'jws.api'"/>
+							</bean>
+						</set>
+					</property>
+					<property name="outArguments">
+						<set>
+							<bean class="org.jwebsocket.plugins.api.TokenArgument">
+								<property name="name" value="has"/>
+								<property name="type" value="boolean"/>
+								<property name="comment" value="The return value indicating of the target plug-in exists or not"/>
+								<property name="testValue" value="true"/>
+							</bean>
+						</set>
+					</property>
+				</bean>
+				
+				<bean class="org.jwebsocket.plugins.api.TokenDefinition">
+					<property name="type" value="getServerApi" />
+					<property name="comment" value="Export all the server plug-ins API" />
+					<property name="outArguments">
+						<set>
+							<bean class="org.jwebsocket.plugins.api.TokenArgument">
+								<property name="name" value="api"/>
+								<property name="type" value="array"/>
+								<property name="comment" value="The plug-ins API collection"/>
+							</bean>
+						</set>
+					</property>
+				</bean>
+				
+				<bean class="org.jwebsocket.plugins.api.TokenDefinition">
+					<property name="type" value="getPlugInIds" />
+					<property name="comment" value="Export all the server plug-ins identifiers" />
+					<property name="outArguments">
+						<set>
+							<bean class="org.jwebsocket.plugins.api.TokenArgument">
+								<property name="name" value="identifiers"/>
+								<property name="type" value="array"/>
+								<property name="comment" value="The plug-ins identifier collection"/>
+							</bean>
+						</set>
+					</property>
+				</bean>
+				
+				<bean class="org.jwebsocket.plugins.api.TokenDefinition">
+					<property name="type" value="supportsToken" />
+					<property name="comment" value="Giving a custom token type 'token_type' return TRUE if it is supported FALSE otherwise. Use the 'token_supported' response property for the return value" />
+					<property name="inArguments">
+						<set>
+							<bean class="org.jwebsocket.plugins.api.TokenArgument">
+								<property name="name" value="token_type"/>
+								<property name="type" value="string"/>
+								<property name="comment" value="The plug-in identifier argument"/>
+								<property name="testValue" value="'server.has.plugin'"/>
+							</bean>
+						</set>
+					</property>
+					<property name="outArguments">
+						<set>
+							<bean class="org.jwebsocket.plugins.api.TokenArgument">
+								<property name="name" value="token_supported"/>
+								<property name="type" value="boolean"/>
+								<property name="comment" value="Indicate if the token type is supported"/>
+								<property name="testValue" value="true"/>
+							</bean>
+						</set>
+					</property>
+				</bean>
+				
+				<bean class="org.jwebsocket.plugins.api.TokenDefinition">
+					<property name="type" value="getPlugInApi" />
+					<property name="comment" value="Giving a custom plug-in identifier 'plugin_id' return the target plug-in API" />
+					<property name="inArguments">
+						<set>
+							<bean class="org.jwebsocket.plugins.api.TokenArgument">
+								<property name="name" value="plugin_id"/>
+								<property name="type" value="string"/>
+								<property name="comment" value="The plug-in identifier argument"/>
+								<property name="testValue" value="'jws.api'"/>
+							</bean>
+						</set>
+					</property>
+					<property name="outArguments">
+						<set>
+							<bean class="org.jwebsocket.plugins.api.TokenArgument">
+								<property name="name" value="id"/>
+								<property name="type" value="string"/>
+								<property name="comment" value="The plug-in identifier"/>
+							</bean>
+							<bean class="org.jwebsocket.plugins.api.TokenArgument">
+								<property name="name" value="comment"/>
+								<property name="type" value="string"/>
+								<property name="comment" value="The plug-in comment"/>
+							</bean>
+							<bean class="org.jwebsocket.plugins.api.TokenArgument">
+								<property name="name" value="supportedTokens"/>
+								<property name="type" value="array"/>
+								<property name="comment" value="The plug-in supported tokens collection"/>
+							</bean>
+						</set>
+					</property>
+				</bean>
+			</set>
+		</property>
+	</bean>
+
+</beans>

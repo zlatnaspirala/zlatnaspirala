@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+  http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="TestPlugIn" class="org.jwebsocket.eventmodel.plugin.test.TestPlugIn" parent="AbstractPlugIn">
+		<property name="id" value="test" />
+		<property name="emEventClassesAndClientAPI">
+			<map>
+				<entry key="getHashCode" value="org.jwebsocket.eventmodel.event.test.GetHashCode"/>
+				<entry key="getEventsInfo" value="org.jwebsocket.eventmodel.event.test.GetEventsInfo"/>
+				<entry key="s2cNotification" value="org.jwebsocket.eventmodel.event.test.S2CNotification"/>
+				<entry key="jcTest" value="org.jwebsocket.eventmodel.event.test.JcTest"/>
+				<entry key="terminalReady" value="org.jwebsocket.eventmodel.event.card.JcTerminalReady"/>
+				<entry key="terminalNotReady" value="org.jwebsocket.eventmodel.event.card.JcTerminalNotReady"/>
+			</map>
+		</property>
+		<property name="eventsDefinitions">
+			<set>
+				<bean parent="AbstractEventDefinition">
+					<property name="id" value="testing.get.hash_code" />
+					<property name="ns" value="org.jwebsocket.eventmodel.event.test.GetHashCode" />
+					<property name="responseRequired" value="true" />
+					<property name="responseToOwnerConnector" value="true" />
+					<property name="securityEnabled" value="true" />
+					<property name="roles">
+						<set>
+							<value>USER</value>
+						</set>
+					</property>
+					<property name="incomingArgsValidation">
+						<set>
+							<bean class="org.jwebsocket.eventmodel.filter.validator.Argument" >
+								<property name="name" value="text" />
+								<property name="type" value="string" />
+								<property name="optional" value="false" />
+							</bean>
+						</set>
+					</property >
+					<property name="outgoingArgsValidation">
+						<set>
+							<bean class="org.jwebsocket.eventmodel.filter.validator.Argument" >
+								<property name="name" value="hash_code" />
+								<property name="type" value="integer" />
+								<property name="optional" value="false" />
+							</bean>
+						</set>
+					</property>
+				</bean>
+				<bean parent="AbstractEventDefinition">
+					<property name="id" value="testing.get.events_info" />
+					<property name="ns" value="org.jwebsocket.eventmodel.event.test.GetEventsInfo" />
+					<property name="responseRequired" value="true" />
+					<property name="responseToOwnerConnector" value="true" />
+					<property name="cacheEnabled" value="true" />
+					<property name="cacheTime" value="3600" />
+					<property name="outgoingArgsValidation">
+						<set>
+							<bean class="org.jwebsocket.eventmodel.filter.validator.Argument" >
+								<property name="name" value="table" />
+								<property name="type" value="object" />
+								<property name="optional" value="false" />
+							</bean>
+						</set>
+					</property>
+				</bean>
+				<bean parent="AbstractEventDefinition">
+					<property name="id" value="jc.terminal.ready" />
+					<property name="ns" value="org.jwebsocket.eventmodel.event.card.JcTerminalReady" />
+					<property name="responseRequired" value="false" />
+					<property name="incomingArgsValidation">
+						<set>
+							<bean class="org.jwebsocket.eventmodel.filter.validator.Argument" >
+								<property name="name" value="terminal" />
+								<property name="type" value="string" />
+								<property name="optional" value="false" />
+							</bean>
+						</set>
+					</property>
+				</bean>
+				<bean parent="AbstractEventDefinition">
+					<property name="id" value="jc.terminal.notready" />
+					<property name="ns" value="org.jwebsocket.eventmodel.event.card.JcTerminalNotReady" />
+					<property name="responseRequired" value="false" />
+					<property name="incomingArgsValidation">
+						<set>
+							<bean class="org.jwebsocket.eventmodel.filter.validator.Argument" >
+								<property name="name" value="terminal" />
+								<property name="type" value="string" />
+								<property name="optional" value="false" />
+							</bean>
+						</set>
+					</property>
+				</bean>
+				<bean parent="AbstractEventDefinition">
+					<property name="id" value="jc.test" />
+					<property name="ns" value="org.jwebsocket.eventmodel.event.test.JcTest" />
+				</bean>
+				<bean parent="AbstractEventDefinition">
+					<property name="id" value="testing.s2c_notification" />
+					<property name="ns" value="org.jwebsocket.eventmodel.event.test.S2CNotification" />
+				</bean>
+			</set>
+		</property>
+	</bean>
+	
+	
+</beans>
+
+				
