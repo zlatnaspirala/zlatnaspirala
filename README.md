@@ -32,7 +32,7 @@
 
 ### Kure Orange
 
-![KURE](https://maximumroulette.com:2020/images/icons/favicon-96x96.png)
+![KURE](https://github.com/zlatnaspirala/zlatnaspirala/blob/master/images/ms-icon.png)
 
  - https://maximumroulette.com:2020
 
