@@ -1,4 +1,6 @@
 ## zlatnaspirala/goldenspiral software
+
+zlatnaspirala/zlatnaspirala is just github readme template.
 #### canvas2d-webgl-webrtc-android-sockets-realtime-nodejs-ue4-unity-xcode-visual-studio
 ![](https://github.com/zlatnaspirala/zlatnaspirala/blob/master/images/nikola_lukic.png)
 
@@ -32,7 +34,7 @@
 
 ### Kure Orange
 
-![KURE](https://github.com/zlatnaspirala/zlatnaspirala/blob/master/images/ms-icon.png)
+![KURE](https://github.com/zlatnaspirala/zlatnaspirala/blob/master/images/favicon-96x96.png)
 
  - https://maximumroulette.com:2020
 
