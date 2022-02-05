@@ -36,5 +36,5 @@ zlatnaspirala/zlatnaspirala is just github readme template.
 
 ![KURE](https://github.com/zlatnaspirala/zlatnaspirala/blob/master/images/favicon-96x96.png)
 
- - https://maximumroulette.com:2020
+ - https://kure.maximumroulette.com
 
