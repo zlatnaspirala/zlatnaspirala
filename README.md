@@ -6,9 +6,15 @@ zlatnaspirala/zlatnaspirala is just github readme template.
 
 Personal dev stage server https://maximumroulette.com
 
-## Open Source projects:
+YT Channel https://www.youtube.com/channel/UCc1NtMtvoVzKnOtnai9LGsA/videos
 
- - http://maximumroulette.com/apps/shooter/hang3d-nightmare.html  UE4 Hang3d Nightmare FPS Multiplayer [server runs]
+Hackerrank AI Leaderboard https://www.hackerrank.com/leaderboard?page=1&track=ai&type=practice
+
+
+
+## Open Source hosted projects:
+
+ - http://maximumroulette.com/apps/shooter/hang3d-nightmare.html  UE4 Hang3d Nightmare FPS Multiplayer [dedicated server runs]
  
  - https://maximumroulette.com/apps/shoot-the-zombie  UE4
 
