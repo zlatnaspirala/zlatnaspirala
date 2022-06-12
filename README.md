@@ -12,7 +12,7 @@ Hackerrank AI Leaderboard https://www.hackerrank.com/leaderboard?page=1&track=ai
 
 
 
-## Open Source hosted projects:
+## Open Source hosted projects [standard links]:
 
  - http://maximumroulette.com/apps/shooter/hang3d-nightmare.html  UE4 Hang3d Nightmare FPS Multiplayer [dedicated server runs]
  
@@ -27,6 +27,8 @@ Hackerrank AI Leaderboard https://www.hackerrank.com/leaderboard?page=1&track=ai
  - https://maximumroulette.com:3000 [Link Not active at the moment]  Vuletube YouTube experimental player[own]
 
  - https://maximumroulette.com/apps/matrix-engine/examples-build.html  Matrix Engine [own webgl engine] [based on glmatrix]
+ 
+ - https://maximumroulette.com/apps/matrix-engine-starter/projects/matrix-slot/index.html Slot mashine based on matrix-engine
 
  - https://maximumroulette.com/apps/tshirts/project_instance/tshirts.html?tshirts [own]
 
