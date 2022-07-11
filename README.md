@@ -14,11 +14,11 @@ Hackerrank AI Leaderboard https://www.hackerrank.com/leaderboard?page=1&track=ai
 
 ## Open Source hosted projects [standard links]:
 
- - http://maximumroulette.com/apps/shooter/hang3d-nightmare.html  UE4 Hang3d Nightmare FPS Multiplayer [dedicated server runs]
+ - http://maximumroulette.com/apps/shooter/hang3d-nightmare.html  UE4 Hang3d Nightmare FPS Multiplayer [dedicated server runs / maybe not always]
  
- - https://maximumroulette.com/apps/shoot-the-zombie  UE4
+ - https://maximumroulette.com/apps/shoot-the-zombie  UE4 [ no running dedicated server ]
 
- - https://maximumroulette.com/apps/realistic-rendering  UE4
+ - https://maximumroulette.com/apps/realistic-rendering  UE4 
 
  - http://rocketcraft.maximumroulette.com  UE4 Barbarian Road Mashines Beta [no server run for multiplayer only single]
 
@@ -44,6 +44,7 @@ Hackerrank AI Leaderboard https://www.hackerrank.com/leaderboard?page=1&track=ai
 
 ### Kure Orange VideoChat based on kurento media server vs openvidu.
 
+ NOT ACTIVE!
 ![KURE](https://github.com/zlatnaspirala/zlatnaspirala/blob/master/images/favicon-96x96.png)
 
  - https://kure.maximumroulette.com
