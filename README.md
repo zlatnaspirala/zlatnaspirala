@@ -1,7 +1,9 @@
 ## zlatnaspirala/goldenspiral software
 
-zlatnaspirala/zlatnaspirala is just github readme template.
-#### canvas2d-webgl-webrtc-android-sockets-realtime-nodejs-ue4-unity-xcode-visual-studio
+zlatnaspirala/zlatnaspirala is just github readme template. it is my first touch with javaScript. It is funny but this webgl app works on android 3 from 2007.
+Modern version and scene object orientend version of this code is matrix-engine. Matrix-engine comes with click trigger raycast, bvh animation, transformations, video/camera/canvas2d active textures and more. 
+
+#### Tags: canvas2d-webgl-webrtc-android-sockets-realtime-nodejs-ue4-unity-xcode-visual-studio
 ![](https://github.com/zlatnaspirala/zlatnaspirala/blob/master/images/nikola_lukic.png)
 
 Personal dev stage server https://maximumroulette.com
@@ -9,7 +11,6 @@ Personal dev stage server https://maximumroulette.com
 YT Channel https://www.youtube.com/channel/UCc1NtMtvoVzKnOtnai9LGsA/videos
 
 Hackerrank AI Leaderboard https://www.hackerrank.com/leaderboard?page=1&track=ai&type=practice
-
 
 
 ## Open Source hosted projects [standard links]:
