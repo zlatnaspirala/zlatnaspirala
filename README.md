@@ -39,7 +39,7 @@ Hackerrank AI Leaderboard https://www.hackerrank.com/leaderboard?page=1&track=ai
 
 ## Commercial projects:
 
-### Ultimate Roulette 0.1 With real physics [only desktop brosers for now]
+### Ultimate Roulette 0.1 With real physics [only desktop browsers for now]
  - https://roulette.maximumroulette.com
  - https://codecanyon.net/item/ultimate-roulette-version-10/26607762
 
