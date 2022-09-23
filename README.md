@@ -15,7 +15,14 @@ Hackerrank AI Leaderboard https://www.hackerrank.com/leaderboard?page=1&track=ai
 
 ## Open Source hosted projects [standard links]:
 
- - http://maximumroulette.com/apps/shooter/hang3d-nightmare.html  UE4 Hang3d Nightmare FPS Multiplayer [dedicated server runs / maybe not always]
+ - UE4 Hang3d Nightmare FPS Multiplayer [dedicated server runs / maybe not always]
+
+   New high Quallity:
+
+    - http://maximumroulette.com/apps/hang3d/
+
+   Old:
+    - http://maximumroulette.com/apps/shooter/hang3d-nightmare.html
  
  - https://maximumroulette.com/apps/shoot-the-zombie  UE4 [ no running dedicated server ]
 
