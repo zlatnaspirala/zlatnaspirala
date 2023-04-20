@@ -13,7 +13,9 @@ YT Channel https://www.youtube.com/channel/UCc1NtMtvoVzKnOtnai9LGsA/videos
 Hackerrank AI Leaderboard https://www.hackerrank.com/leaderboard?page=1&track=ai&type=practice
 
 
-## Open Source hosted projects [standard links]:
+## Open Source hosted projects [standard maximumroulette links]:
+
+ - [SAFIR] My own virtual DOM ECMA6 project https://maximumroulette.com/apps/safir/
 
  - UE4 Hang3d Nightmare FPS Multiplayer [dedicated server runs / maybe not always]
 
