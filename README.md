@@ -10,7 +10,9 @@ Personal dev stage server https://maximumroulette.com
 
 YT Channel https://www.youtube.com/channel/UCc1NtMtvoVzKnOtnai9LGsA/videos
 
-Hackerrank AI Leaderboard https://www.hackerrank.com/leaderboard?page=1&track=ai&type=practice
+Stackoverflow: https://stackoverflow.com/users/1513187/nikola-lukic
+
+Hackerrank AI Leaderboard https://www.hackerrank.com/leaderboard?page=2&track=ai&type=practice
 
 
 ## Open Source hosted projects [standard maximumroulette links]:
