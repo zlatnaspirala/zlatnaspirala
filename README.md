@@ -2,6 +2,32 @@
 
 zlatnaspirala/zlatnaspirala is just github readme template. it is my first touch with javaScript. It is funny but this webgl app works on android 3 from 2007.
 Modern version and scene object orientend version of this code is matrix-engine. Matrix-engine comes with click trigger raycast, bvh animation, transformations, video/camera/canvas2d active textures and more. 
+Matrix-engine at the moment support only opengle300 SL ver but can be manual downgraded to the 1.1 [1.1 openglews will limit engine features]
+
+### Global shema for zlatnaspirala software
+
+#### REST HTTP SERVER - HANDLING ACCOUNT SESSION 
+- Communication only by htpp request. This project lead in backend part. Used by kickstart/safir, rocket-craft projects.
+- https://github.com/RocketCraftingServer/rocket-craft-server
+
+#### ROCKET CRAFT - UE4 projetcs
+  - empty
+  - BarbarianRoadMashines
+  - Shoot the zombie
+  - Hang3d FPShooter
+
+#### Safir 
+ - Light virtual DOM.
+ - Tech: Based on ECMA6 programming paradigms builded on Template Literals, CustomEvents, Custom Tags.
+ - Alternative software - High Performace
+
+#### Matrix-engine
+- WebGL library based on glmatrix ver 2
+
+#### Visual-ts Game Engine
+- 2d canvas game engine based on Matter.js 2D physics engine for the web supported with backend node.js/mongoDB and visual GUI tool 2d map creator/python3.
+- https://github.com/zlatnaspirala/visual-ts-game-engine
+
 
 #### Tags: canvas2d-webgl-webrtc-android-sockets-realtime-nodejs-ue4-unity-xcode-visual-studio
 ![](https://github.com/zlatnaspirala/zlatnaspirala/blob/master/images/nikola_lukic.png)
