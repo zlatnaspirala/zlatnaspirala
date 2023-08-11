@@ -7,7 +7,7 @@ Matrix-engine at the moment support only opengle300 SL ver but can be manual dow
 ### Global shema for zlatnaspirala software
 
 #### REST HTTP SERVER - HANDLING ACCOUNT SESSION 
-- Communication only by htpp request. This project lead in backend part. Used by kickstart/safir, rocket-craft projects.
+- Communication only with http request. This project lead in backend part. Used by kickstart/safir, rocket-craft projects.
 - https://github.com/RocketCraftingServer/rocket-craft-server
 
 #### ROCKET CRAFT - UE4 projetcs
