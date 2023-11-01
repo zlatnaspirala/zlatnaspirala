@@ -1,8 +1,10 @@
 ## zlatnaspirala/goldenspiral software
 
-zlatnaspirala/zlatnaspirala is just github readme template. it is my first touch with javaScript. It is funny but this webgl app works on android 3 from 2007.
+zlatnaspirala/zlatnaspirala is just github readme template. it is my first touch with javaScript. It is funny but this webgl app works on android 3 from 2007 [opengles1.1].
 Modern version and scene object orientend version of this code is matrix-engine. Matrix-engine comes with click trigger raycast, bvh animation, transformations, video/camera/canvas2d active textures and more. 
 Matrix-engine at the moment support only opengle300 SL ver but can be manual downgraded to the 1.1 [1.1 openglews will limit engine features]
+Safir is simple direct DOM update with own return render `<div></div>` based on ECMA6 special on CustomEvent and literals - i figure why vanilla is best and i push rerender principe in secound plan. Updating direct html tag mehanics 
+with optimal arg `LEVEL of saving content` [in fly, session storage, local storage ]. Nidza.js is 2dcanvas oriented but also i put special webgl/glmatrix basic/custom shaders for webGL surface. 
 
 ### Global shema for zlatnaspirala software
 
@@ -43,6 +45,9 @@ Hackerrank AI Leaderboard https://www.hackerrank.com/leaderboard?page=2&track=ai
 
 ## Open Source hosted projects [standard maximumroulette links]:
 
+ - [matrix-engine-starter] wip
+    https://maximumroulette.com/apps/matrix-engine-starter/projects/matrix-roulette/ 
+ 
  - [SAFIR] My own virtual DOM ECMA6 project https://maximumroulette.com/apps/safir/
 
  - UE4 Hang3d Nightmare FPS Multiplayer [dedicated server runs / maybe not always]
