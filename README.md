@@ -77,7 +77,8 @@ Hackerrank AI Leaderboard https://www.hackerrank.com/leaderboard?page=2&track=ai
 
  - https://maximumroulette.com/apps/monsters [own]
 
- - https://maximumroulette.com/downloads/UA0.2free/UAinstaller.rar Free 3d anatomy [win]
+ - https://maximumroulette.com/downloads/UA0.2free/UAinstaller.rar Free 3d anatomy [win desktop exe] Freeware.
+   
 
 ## Commercial projects:
 
