@@ -8,11 +8,19 @@ with optimal arg `LEVEL of saving content` [in fly, session storage, local stora
 
 ### Global shema for zlatnaspirala software
 
+### Database used MongoDB 
+ Ref: https://www.mongodb.com/why-use-mongodb
+ I make uniq shema for database jobs. 
+
 #### REST HTTP SERVER - HANDLING ACCOUNT SESSION 
 - Communication only with http request. This project lead in backend part. Used by kickstart/safir, rocket-craft projects.
-- https://github.com/RocketCraftingServer/rocket-craft-server
+- [RCS Server](https://github.com/RocketCraftingServer/rocket-craft-server)
+
+- Communication only with websockets[webRTC]. Same DB used (like rocketcraftingserver). This project is standalone powered with Node.js/mongoDB/webRTC.
+- [Visual-TS GE server part](https://github.com/zlatnaspirala/visual-ts-game-engine/tree/master/server)
 
 #### ROCKET CRAFT - UE4 projetcs
+ In ue4.24 i use `http/https request` data format JSON.
   - empty
   - BarbarianRoadMashines
   - Shoot the zombie
@@ -24,7 +32,8 @@ with optimal arg `LEVEL of saving content` [in fly, session storage, local stora
  - Alternative software - High Performace
 
 #### Matrix-engine
-- WebGL library based on glmatrix ver 2
+- WebGL library based on glmatrix ver 2.xx. Can be downgraded with url param to the glsl 1.1.
+- For networking used broadcaster class.Same used in RCS/Visual-ts GE. Broadcaster donts care about DB record it is singnaling server very usefull in 3d context(multiplayer modes etc.).
 
 #### Visual-ts Game Engine
 - 2d canvas game engine based on Matter.js 2D physics engine for the web supported with backend node.js/mongoDB and visual GUI tool 2d map creator/python3.
