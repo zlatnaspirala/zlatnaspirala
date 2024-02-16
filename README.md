@@ -54,6 +54,11 @@ Hackerrank AI Leaderboard https://www.hackerrank.com/leaderboard?page=2&track=ai
 
 ## Open Source hosted projects [standard maximumroulette links]:
 
+ Shader playground - I need more skills in this area. All shaders will be part
+ of buildin matrix-engine custom shaders but only with MIT Licence.
+ - https://github.com/zlatnaspirala/GLSL-Shaders
+ - https://maximumroulette.com/apps/glsl-editor/
+   
  - [matrix-engine-starter] wip
     https://maximumroulette.com/apps/matrix-engine-starter/projects/matrix-roulette/ 
  
