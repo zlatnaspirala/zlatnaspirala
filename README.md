@@ -33,7 +33,7 @@ with optimal arg `LEVEL of saving content` [in fly, session storage, local stora
 
 #### Matrix-engine
 - WebGL library based on glmatrix ver 2.xx. Can be downgraded with url param to the glsl 1.1.
-- For networking used broadcaster class.Same used in RCS/Visual-ts GE. Broadcaster donts care about DB record it is singnaling server very usefull in 3d context(multiplayer modes etc.).
+- For networking used broadcaster class.Same used in RCS/Visual-ts GE. Broadcaster don't care about DB record it is singnaling server very usefull in 3d context(multiplayer modes etc.).
 
 #### Visual-ts Game Engine
 - 2d canvas game engine based on Matter.js 2D physics engine for the web supported with backend node.js/mongoDB and visual GUI tool 2d map creator/python3.
