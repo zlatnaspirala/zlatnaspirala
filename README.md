@@ -86,10 +86,12 @@ Hackerrank AI Leaderboard https://www.hackerrank.com/leaderboard?page=2&track=ai
  - https://maximumroulette.com/apps/matrix-engine/examples-build.html  Matrix Engine [own webgl engine] [based on glmatrix]
  
  - https://maximumroulette.com/apps/matrix-engine-starter/projects/matrix-slot/index.html Slot mashine based on matrix-engine
+   
+ - https://maximumroulette.com/apps/magic/public/module.html   Magic (three.js) Multiplayer run on signaling matrix-engine server.
 
- - https://maximumroulette.com/apps/tshirts/project_instance/tshirts.html?tshirts [own]
+ - https://maximumroulette.com/apps/tshirts/project_instance/tshirts.html?tshirts [own/old]
 
- - https://maximumroulette.com/apps/monsters [own]
+ - https://maximumroulette.com/apps/monsters [own/old]
 
  - https://maximumroulette.com/downloads/UA0.2free/UAinstaller.rar Free 3d anatomy [win desktop exe] Freeware.
  - ![](https://github.com/zlatnaspirala/maximumroulette-com/blob/master/2021/public/assets/images/ua/1.png)
