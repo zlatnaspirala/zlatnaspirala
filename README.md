@@ -19,6 +19,8 @@ with optimal arg `LEVEL of saving content` [in fly, session storage, local stora
 - Communication only with websockets[webRTC]. Same DB used (like rocketcraftingserver). This project is standalone powered with Node.js/mongoDB/webRTC.
 - [Visual-TS GE server part](https://github.com/zlatnaspirala/visual-ts-game-engine/tree/master/server)
 
+#### New networking 
+  0 Kurento will be future main networking platform in mine projects.
 #### ROCKET CRAFT - UE4 projetcs
  In ue4.24 i use `http/https request` data format JSON.
   - empty
@@ -105,8 +107,8 @@ Hackerrank AI Leaderboard https://www.hackerrank.com/leaderboard?page=2&track=ai
 
 ### Kure Orange VideoChat based on kurento media server vs openvidu.
 
- NOT ACTIVE!
+ ACTIVE !
 ![KURE](https://github.com/zlatnaspirala/zlatnaspirala/blob/master/images/favicon-96x96.png)
 
- - https://kure.maximumroulette.com
+ - https://maximumroulette.com:2020
 
