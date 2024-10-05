@@ -20,7 +20,7 @@ with optimal arg `LEVEL of saving content` [in fly, session storage, local stora
 - [Visual-TS GE server part](https://github.com/zlatnaspirala/visual-ts-game-engine/tree/master/server)
 
 #### New networking 
-  0 Kurento will be future main networking platform in mine projects.
+  - Kurento will be future main networking platform in mine projects.
 #### ROCKET CRAFT - UE4 projetcs
  In ue4.24 i use `http/https request` data format JSON.
   - empty
