@@ -51,13 +51,14 @@ with optimal arg `LEVEL of saving content` [in fly, session storage, local stora
 Personal dev stage server https://maximumroulette.com
 
 YT Channel https://www.youtube.com/channel/UCc1NtMtvoVzKnOtnai9LGsA/videos
+https://www.youtube.com/@3dprogramer
 
 Stackoverflow: https://stackoverflow.com/users/1513187/nikola-lukic
 
 Hackerrank AI Leaderboard https://www.hackerrank.com/leaderboard?page=2&track=ai&type=practice
 
 
-## Open Source hosted projects [standard maximumroulette links]:
+## Open Source hosted projects [Standard Maximumroulette.com links]:
 
  Shader playground - I need more skills in this area. All shaders will be part
  of buildin matrix-engine custom shaders but only with MIT Licence.
@@ -65,11 +66,12 @@ Hackerrank AI Leaderboard https://www.hackerrank.com/leaderboard?page=2&track=ai
  - https://maximumroulette.com/apps/glsl-editor/
    
  - [matrix-engine-starter] wip
-    https://maximumroulette.com/apps/matrix-engine-starter/projects/matrix-roulette/ 
+    https://maximumroulette.com/apps/matrix-engine-starter/projects/matrix-roulette/
+    https://maximumroulette.com/apps/matrix-engine-starter/projects/hang3d/
  
  - [SAFIR] My own virtual DOM ECMA6 project https://maximumroulette.com/apps/safir/
 
- - UE4 Hang3d Nightmare FPS Multiplayer [dedicated server runs / maybe not always]
+ - UE4 Hang3d Nightmare FPS Multiplayer [dedicated server runs / maybe not always NOT ACTIVE Oct 2024]
 
    New high Quallity:
 
