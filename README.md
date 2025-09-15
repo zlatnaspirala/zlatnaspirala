@@ -1,12 +1,31 @@
-## zlatnaspirala/goldenspiral software
+Nikola Lukic (zlatnaspirala)
 
-zlatnaspirala/zlatnaspirala is just github readme template. it is my first touch with javaScript. It is funny but this webgl app works on android 3 from 2007 [opengles1.1].
-Modern version and scene object orientend version of this code is matrix-engine. Matrix-engine comes with click trigger raycast, bvh animation, transformations, video/camera/canvas2d active textures and more. 
-Matrix-engine at the moment support only opengle300 SL ver but can be manual downgraded to the 1.1 [1.1 openglews will limit engine features]
-Safir is simple direct DOM update with own return render `<div></div>` based on ECMA6 special on CustomEvent and literals - i figure why vanilla is best and i push rerender principe in secound plan. Updating direct html tag mehanics 
-with optimal arg `LEVEL of saving content` [in fly, session storage, local storage ]. Nidza.js is 2dcanvas oriented but also i put special webgl/glmatrix basic/custom shaders for webGL surface. 
+Senior Software Engineer / 3D & Real-Time Developer
 
-### Global shema for zlatnaspirala software
+📧 maximumroulette.com
+ • 🌐 GitHub
+ • 💼 LinkedIn
+ • 🧑‍💻 StackOverflow
+
+Profile
+
+Innovative software engineer with 15+ years of experience in web, real-time graphics, and multiplayer systems.
+Specialized in canvas2d, WebGL/WebGPU, custom rendering engines, networking, and cross-platform development.
+Proven ability to design, implement, and ship full applications — from backend servers to front-end rendering engines — with high performance and scalability.
+
+Core Skills
+
+Graphics / Engines: WebGL, WebGPU, OpenGL ES, GLSL shaders, Three.js, Ammo.js, raycasting, BVH animation, physics integration.
+
+Front-End: JavaScript, TypeScript, React, Vue.js, HTML5 Canvas2D.
+
+Back-End & Networking: Node.js, WebSockets, WebRTC, Kurento, MongoDB.
+
+Game / Interactive Media: UE4, Unity, custom game engines, multiplayer architecture, cross-platform builds.
+
+Other: Virtual DOM concepts, CustomEvents, performance optimization, responsive UI, mobile optimisation.
+
+### Skills
 
 ### Database used MongoDB 
  Ref: https://www.mongodb.com/why-use-mongodb
@@ -19,9 +38,10 @@ with optimal arg `LEVEL of saving content` [in fly, session storage, local stora
 - Communication only with websockets[webRTC]. Same DB used (like rocketcraftingserver). This project is standalone powered with Node.js/mongoDB/webRTC.
 - [Visual-TS GE server part](https://github.com/zlatnaspirala/visual-ts-game-engine/tree/master/server)
 
-#### New networking 
+#### Networking
   - Kurento will be future main networking platform in mine projects for non secured data flow or video chats. 
    I use mediaStream for multiplayer player position for example but i use also RocketCraftServer for acconts session (login/secured call +comb with kurento).
+  - Native webRTC (nodejs/js)
 
 #### ROCKET CRAFT - UE4 projetcs
  In ue4.24 i use `http/https request` data format JSON.
@@ -30,7 +50,7 @@ with optimal arg `LEVEL of saving content` [in fly, session storage, local stora
   - Shoot the zombie
   - Hang3d FPShooter
 
-#### Safir 
+#### Safir (similar to reactjs)
  - Light virtual DOM.
  - Tech: Based on ECMA6 programming paradigms builded on Template Literals, CustomEvents, Custom Tags.
  - Alternative software - High Performace
@@ -112,8 +132,20 @@ Hackerrank AI Leaderboard https://www.hackerrank.com/leaderboard?page=2&track=ai
 
 ### Kure Orange VideoChat based on kurento media server vs openvidu.
 
+### Commercials&opensource https://goldenspiral.itch.io/
+
  ACTIVE !
 ![KURE](https://github.com/zlatnaspirala/zlatnaspirala/blob/master/images/favicon-96x96.png)
 
  - https://maximumroulette.com:2020
 
+
+## Gallery
+
+<img src="https://github.com/zlatnaspirala/zlatnaspirala/blob/master/images/00.png" />
+<img src="https://github.com/zlatnaspirala/zlatnaspirala/blob/master/images/1.png" />
+<img src="https://github.com/zlatnaspirala/zlatnaspirala/blob/master/images/2.png" />
+<img src="https://github.com/zlatnaspirala/zlatnaspirala/blob/master/images/3.png" />
+<img src="https://github.com/zlatnaspirala/zlatnaspirala/blob/master/images/4.png" />
+<img src="https://github.com/zlatnaspirala/zlatnaspirala/blob/master/images/3d-jamb.png" />
+<img src="https://github.com/zlatnaspirala/zlatnaspirala/blob/master/images/performance.png" />
