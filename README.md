@@ -27,9 +27,20 @@ Other: Virtual DOM concepts, CustomEvents, performance optimization, responsive 
 
 ### Skills
 
+Make my own game engines for 2d/3d.Ussed cannon.js/ammojs for physics.
+
+#### Matrix-engine
+- WebGL library based on glmatrix ver 2.xx. Can be downgraded with url param to the glsl 1.1.
+- For networking used broadcaster Kure / kerento driven.
+- [DEPLACED] For networking used broadcaster class.Same used in RCS/Visual-ts GE. Broadcaster don't care about DB record it is singnaling server very usefull in 3d context(multiplayer modes etc.).
+
+#### Visual-ts Game Engine
+- 2d canvas game engine based on Matter.js 2D physics engine for the web supported with backend node.js/mongoDB and visual GUI tool 2d map creator/python3.
+- https://github.com/zlatnaspirala/visual-ts-game-engine
+
+
 ### Database used MongoDB 
- Ref: https://www.mongodb.com/why-use-mongodb
- I make uniq shema for database jobs. 
+ I make uniq shema for database jobs.
 
 #### REST HTTP SERVER - HANDLING ACCOUNT SESSION 
 - Communication only with http request. This project lead in backend part. Used by kickstart/safir, rocket-craft projects.
@@ -54,15 +65,6 @@ Other: Virtual DOM concepts, CustomEvents, performance optimization, responsive 
  - Light virtual DOM.
  - Tech: Based on ECMA6 programming paradigms builded on Template Literals, CustomEvents, Custom Tags.
  - Alternative software - High Performace
-
-#### Matrix-engine
-- WebGL library based on glmatrix ver 2.xx. Can be downgraded with url param to the glsl 1.1.
-- For networking used broadcaster Kure / kerento driven.
-- [DEPLACED] For networking used broadcaster class.Same used in RCS/Visual-ts GE. Broadcaster don't care about DB record it is singnaling server very usefull in 3d context(multiplayer modes etc.).
-
-#### Visual-ts Game Engine
-- 2d canvas game engine based on Matter.js 2D physics engine for the web supported with backend node.js/mongoDB and visual GUI tool 2d map creator/python3.
-- https://github.com/zlatnaspirala/visual-ts-game-engine
 
 
 #### Tags: canvas2d-webgl-webrtc-android-sockets-realtime-nodejs-ue4-unity-xcode-visual-studio
@@ -154,3 +156,8 @@ Hackerrank AI Leaderboard https://www.hackerrank.com/leaderboard?page=2&track=ai
 <img src="https://github.com/zlatnaspirala/zlatnaspirala/blob/master/images/shooter1.png" />
 <img src="https://github.com/zlatnaspirala/zlatnaspirala/blob/master/images/shooter2.png" />
 <img src="https://github.com/zlatnaspirala/zlatnaspirala/blob/master/images/zombie2.png" />
+<img src="https://github.com/zlatnaspirala/zlatnaspirala/blob/master/images/hang3d-matrix.png" />
+<img src="https://github.com/zlatnaspirala/zlatnaspirala/blob/master/images/matrix-roulette-1.png" />
+<img src="https://github.com/zlatnaspirala/zlatnaspirala/blob/master/images/matrix-roulette-2.png" />
+<img src="https://github.com/zlatnaspirala/zlatnaspirala/blob/master/images/matrix-roulette.png" />
+<img src="https://github.com/zlatnaspirala/zlatnaspirala/blob/master/images/33.png" />
