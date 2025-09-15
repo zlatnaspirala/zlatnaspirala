@@ -84,6 +84,10 @@ I made 2d map createor for my platformer 2d game.
  Wrap own webgpu engine intro reatjs
   https://github.com/zlatnaspirala/me-webgpu-react
 
+Remote control woth web page :
+Opensource part:
+  https://github.com/zlatnaspirala/wizard-service
+ c# part commercial.
 
 #### Tags: canvas2d-webgl-webrtc-android-sockets-realtime-nodejs-ue4-unity-xcode-visual-studio
 ![](https://github.com/zlatnaspirala/zlatnaspirala/blob/master/images/nikola_lukic.png)
@@ -95,7 +99,8 @@ https://www.youtube.com/@3dprogramer
 
 Stackoverflow: https://stackoverflow.com/users/1513187/nikola-lukic
 
-Hackerrank AI Leaderboard https://www.hackerrank.com/leaderboard?page=2&track=ai&type=practice
+In best day i was top 14 but 3-4 year inactivity...
+Hackerrank AI Leaderboard https://www.hackerrank.com/leaderboard?page=3&track=ai&type=practice
 
 
 ## Open Source hosted projects [Standard Maximumroulette.com links]:
