@@ -2,10 +2,10 @@ Nikola Lukic (zlatnaspirala)
 
 Senior Software Engineer / 3D & Real-Time Developer
 
-📧 maximumroulette.com
- • 🌐 GitHub
- • 💼 LinkedIn
- • 🧑‍💻 StackOverflow
+📧 [maximumroulette.com](https://maximumroulette.com) • 
+🌐 [GitHub](https://github.com/zlatnaspirala) • 
+💼 [LinkedIn](https://www.linkedin.com/in/3dprogramer/) • 
+🧑‍💻 [StackOverflow](https://stackoverflow.com/users/1513187/nikola-lukic)
 
 Profile
 
@@ -131,14 +131,11 @@ Hackerrank AI Leaderboard https://www.hackerrank.com/leaderboard?page=2&track=ai
  - https://codecanyon.net/item/ultimate-roulette-version-10/26607762
 
 ### Kure Orange VideoChat based on kurento media server vs openvidu.
-
-### Commercials&opensource https://goldenspiral.itch.io/
-
- ACTIVE !
 ![KURE](https://github.com/zlatnaspirala/zlatnaspirala/blob/master/images/favicon-96x96.png)
+- https://maximumroulette.com:2020
 
- - https://maximumroulette.com:2020
-
+### Commercials&opensource on itch.io
+ - https://goldenspiral.itch.io/
 
 ## Gallery
 
@@ -149,3 +146,11 @@ Hackerrank AI Leaderboard https://www.hackerrank.com/leaderboard?page=2&track=ai
 <img src="https://github.com/zlatnaspirala/zlatnaspirala/blob/master/images/4.png" />
 <img src="https://github.com/zlatnaspirala/zlatnaspirala/blob/master/images/3d-jamb.png" />
 <img src="https://github.com/zlatnaspirala/zlatnaspirala/blob/master/images/performance.png" />
+<img src="https://github.com/zlatnaspirala/zlatnaspirala/blob/master/images/brm.png" />
+<img src="https://github.com/zlatnaspirala/zlatnaspirala/blob/master/images/brm2.png" />
+<img src="https://github.com/zlatnaspirala/zlatnaspirala/blob/master/images/hang-play.png" />
+<img src="https://github.com/zlatnaspirala/zlatnaspirala/blob/master/images/hang.png" />
+<img src="https://github.com/zlatnaspirala/zlatnaspirala/blob/master/images/hang3dm.png" />
+<img src="https://github.com/zlatnaspirala/zlatnaspirala/blob/master/images/shooter1.png" />
+<img src="https://github.com/zlatnaspirala/zlatnaspirala/blob/master/images/shooter2.png" />
+<img src="https://github.com/zlatnaspirala/zlatnaspirala/blob/master/images/zombie2.png" />
