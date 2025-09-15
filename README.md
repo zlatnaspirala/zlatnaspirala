@@ -7,6 +7,9 @@ Senior Software Engineer / 3D & Real-Time Developer
 💼 [LinkedIn](https://www.linkedin.com/in/3dprogramer/) • 
 🧑‍💻 [StackOverflow](https://stackoverflow.com/users/1513187/nikola-lukic)
 
+In this portofolio there is no single profesional project (usually NDC)
+Links comming from my free-time space. 
+
 Profile
 
 Innovative software engineer with 15+ years of experience in web, real-time graphics, and multiplayer systems.
@@ -17,7 +20,7 @@ Core Skills
 
 Graphics / Engines: WebGL, WebGPU, OpenGL ES, GLSL shaders, Three.js, Ammo.js, raycasting, BVH animation, physics integration.
 
-Front-End: JavaScript, TypeScript, React, Vue.js, HTML5 Canvas2D.
+Front-End: JavaScript, TypeScript, HTML5 Canvas2D, React, Vue.js. (also expirience in native android/ios apps)
 
 Back-End & Networking: Node.js, WebSockets, WebRTC, Kurento, MongoDB.
 
@@ -31,8 +34,10 @@ Make my own game engines for 2d/3d.Ussed cannon.js/ammojs for physics.
 
 #### Matrix-engine
 - WebGL library based on glmatrix ver 2.xx. Can be downgraded with url param to the glsl 1.1.
-- For networking used broadcaster Kure / kerento driven.
+- For networking used broadcaster Kure / kurento openvide driven.
 - [DEPLACED] For networking used broadcaster class.Same used in RCS/Visual-ts GE. Broadcaster don't care about DB record it is singnaling server very usefull in 3d context(multiplayer modes etc.).
+https://github.com/zlatnaspirala/matrix-engine
+Demos: https://maximumroulette.com/apps/matrix-engine/examples-build.html
 
 #### Visual-ts Game Engine
 - 2d canvas game engine based on Matter.js 2D physics engine for the web supported with backend node.js/mongoDB and visual GUI tool 2d map creator/python3.
@@ -50,9 +55,10 @@ Make my own game engines for 2d/3d.Ussed cannon.js/ammojs for physics.
 - [Visual-TS GE server part](https://github.com/zlatnaspirala/visual-ts-game-engine/tree/master/server)
 
 #### Networking
+  - websocket, io (nodejs, python)
+  - Native webRTC (nodejs/js)
   - Kurento will be future main networking platform in mine projects for non secured data flow or video chats. 
    I use mediaStream for multiplayer player position for example but i use also RocketCraftServer for acconts session (login/secured call +comb with kurento).
-  - Native webRTC (nodejs/js)
 
 #### ROCKET CRAFT - UE4 projetcs
  In ue4.24 i use `http/https request` data format JSON.
@@ -65,6 +71,16 @@ Make my own game engines for 2d/3d.Ussed cannon.js/ammojs for physics.
  - Light virtual DOM.
  - Tech: Based on ECMA6 programming paradigms builded on Template Literals, CustomEvents, Custom Tags.
  - Alternative software - High Performace
+
+
+Tools (python):
+
+I made 2d map createor for my platformer 2d game.
+ - https://github.com/zlatnaspirala/creator-2dmap
+
+ I made visual editor with python (kivy).
+  - https://github.com/zlatnaspirala/cross-k
+
 
 
 #### Tags: canvas2d-webgl-webrtc-android-sockets-realtime-nodejs-ue4-unity-xcode-visual-studio
@@ -138,6 +154,9 @@ Hackerrank AI Leaderboard https://www.hackerrank.com/leaderboard?page=2&track=ai
 
 ### Commercials&opensource on itch.io
  - https://goldenspiral.itch.io/
+
+ https://goldenspiral.itch.io/ultimate-roulette
+ https://goldenspiral.itch.io/matrix-roulette
 
 ## Gallery
 
