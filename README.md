@@ -101,6 +101,7 @@ Stackoverflow: https://stackoverflow.com/users/1513187/nikola-lukic
 
 In best day i was top 14 but 3-4 year inactivity...
 Hackerrank AI Leaderboard https://www.hackerrank.com/leaderboard?page=3&track=ai&type=practice
+Filter Serbia : https://www.hackerrank.com/leaderboard?filter=Serbia&filter_on=country&page=1&track=ai&type=practice
 
 
 ## Open Source hosted projects [Standard Maximumroulette.com links]:
@@ -147,7 +148,10 @@ Hackerrank AI Leaderboard https://www.hackerrank.com/leaderboard?page=3&track=ai
 
  - https://maximumroulette.com/downloads/UA0.2free/UAinstaller.rar Free 3d anatomy [win desktop exe] Freeware.
  - ![](https://github.com/zlatnaspirala/maximumroulette-com/blob/master/2021/public/assets/images/ua/1.png)
-   
+
+ - https://jsfiddle.net/zlatnaspirala/ye2h2cgt/39/
+
+ - AI stuff https://jsfiddle.net/zlatnaspirala/vbwbsyco/66/
 
 ## Commercial projects:
 
