@@ -6,6 +6,7 @@ Senior Software Engineer / 3D & Real-Time Developer
 🌐 [GitHub](https://github.com/zlatnaspirala) • 
 💼 [LinkedIn](https://www.linkedin.com/in/3dprogramer/) • 
 🧑‍💻 [StackOverflow](https://stackoverflow.com/users/1513187/nikola-lukic)
+[YT Channel](https://www.youtube.com/@3dprogramer)
 
 In this portfolio there is no single professional project (usually NDC) Links coming from my free-time space.
 
@@ -60,10 +61,6 @@ Tags: canvas2d-webgl-webrtc-android-sockets-realtime-nodejs-ue4-unity-xcode-visu
 #### Tags: canvas2d-webgl-webrtc-android-sockets-realtime-nodejs-ue4-unity-xcode-visual-studio
 ![](https://github.com/zlatnaspirala/zlatnaspirala/blob/master/images/nikola_lukic.png)
 
-Personal dev stage server https://maximumroulette.com
-
-YT Channel: https://www.youtube.com/@3dprogramer
-Stackoverflow: https://stackoverflow.com/users/1513187/nikola-lukic
 
 In best day i was top 14 but 3-4 year inactivity...
 Hackerrank AI Leaderboard https://www.hackerrank.com/leaderboard?page=3&track=ai&type=practice
