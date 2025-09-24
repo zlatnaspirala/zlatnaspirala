@@ -7,102 +7,67 @@ Senior Software Engineer / 3D & Real-Time Developer
 💼 [LinkedIn](https://www.linkedin.com/in/3dprogramer/) • 
 🧑‍💻 [StackOverflow](https://stackoverflow.com/users/1513187/nikola-lukic)
 
-In this portofolio there is no single profesional project (usually NDC)
-Links comming from my free-time space. 
+In this portfolio there is no single professional project (usually NDC) Links coming from my free-time space.
 
 Profile
 
-Innovative software engineer with 15+ years of experience in web, real-time graphics, casino games and multiplayer systems.
-Specialized in canvas2d, WebGL/WebGPU, custom rendering engines, networking, and cross-platform development.
-Proven ability to design, implement, and ship full applications — from backend servers to front-end rendering engines — with high performance and scalability.
+Innovative software engineer with 15+ years of experience in web, real-time graphics, and multiplayer systems. Specialized in canvas2d, WebGL/WebGPU, custom rendering engines, networking, and cross-platform development. Proven ability to design, implement, and ship full applications — from backend servers to front-end rendering engines — with high performance and scalability.
 
 Core Skills
 
-Graphics : WebGL, WebGPU, OpenGL ES, GLSL shaders, raycasting, BVH animation, physics integration.
-
-Front-End: JavaScript, TypeScript, HTML5 Canvas2D, React.js, create reactjs packages, Vue.js, three.js , ammojs , cannonjs (also expirience in native android/ios apps but focus on web)
-
+Graphics / Engines: WebGL, WebGPU, OpenGL ES, GLSL shaders, Three.js, Ammo.js, raycasting, BVH animation, physics integration.
+Front-End: JavaScript, TypeScript, HTML5 Canvas2D, JQ, React, Vue.js. (also experience in native android/ios apps)
 Back-End & Networking: Node.js, WebSockets, WebRTC, Kurento, MongoDB.
-
-Game Engines: UE4, Unity, create own game engines, multiplayer architecture, cross-platform builds.
-
+Game / Interactive Media: UE4, Unity, custom game engines, multiplayer architecture, cross-platform builds.
 Other: Virtual DOM concepts, CustomEvents, performance optimization, responsive UI, mobile optimisation.
 
-
-### Skills
+Skills/Projects
 
 Make my own game engines for 2d/3d. Used cannon.js/ammojs for physics.
 
-#### Matrix-engine
-- WebGL library based on glmatrix ver 2.xx. Can be downgraded with url param to the glsl 1.1.
-- For networking used broadcaster Kure / kurento openvide driven.
-- [DEPLACED] For networking used broadcaster class.Same used in RCS/Visual-ts GE. Broadcaster don't care about DB record it is singnaling server very usefull in 3d context(multiplayer modes etc.).
-https://github.com/zlatnaspirala/matrix-engine
+- Matrix-engine
+WebGL library based on glmatrix ver 2.xx. Can be downgraded with url param to the glsl 1.1.
+For networking used broadcaster Kure / kurento openvide driven.
 Demos: https://maximumroulette.com/apps/matrix-engine/examples-build.html
 
-#### Visual-ts Game Engine
-- 2d canvas game engine based on Matter.js 2D physics engine for the web supported with backend node.js/mongoDB and visual GUI tool 2d map creator/python3.
-- https://github.com/zlatnaspirala/visual-ts-game-engine
+- Visual-ts Game Engine
+2d canvas game engine based on Matter.js 2D physics engine for the web supported with backend node.js/mongoDB and visual GUI tool 2d map creator/python3.
+https://github.com/zlatnaspirala/visual-ts-game-engine
 
-### Database used MongoDB 
- I make uniq shema for database jobs.
+- Safir (similar to reactjs but faster) Light virtual DOM. Tech: Based on ECMA6 programming paradigms builded on Template Literals, CustomEvents, Custom Tags.
+Alternative software - High Performance
 
-#### REST HTTP SERVER - HANDLING ACCOUNT SESSION 
-- Communication only with http request. This project lead in backend part. Used by kickstart/safir, rocket-craft projects.
-- [RCS Server](https://github.com/RocketCraftingServer/rocket-craft-server)
+Database used MongoDB
+ - REST HTTP SERVER - HANDLING ACCOUNT SESSION
+ - Also socket access
 
-- Communication only with websockets[webRTC]. Same DB used (like rocketcraftingserver). This project is standalone powered with Node.js/mongoDB/webRTC.
-- [Visual-TS GE server part](https://github.com/zlatnaspirala/visual-ts-game-engine/tree/master/server)
-
-#### Networking
-  - websocket, io (nodejs, python)
-  - Native webRTC (nodejs/js)
-  - Kurento will be future main networking platform in mine projects for non secured data flow or video chats. 
-   I use mediaStream for multiplayer player position for example but i use also RocketCraftServer for acconts session (login/secured call +comb with kurento).
-
-#### ROCKET CRAFT - UE4 projetcs
- In ue4.24 i use `http/https request` data format JSON.
-  - empty
-  - BarbarianRoadMashines
-  - Shoot the zombie
-  - Hang3d FPShooter
-
-#### Safir (similar to reactjs)
- - Light virtual DOM.
- - Tech: Based on ECMA6 programming paradigms builded on Template Literals, CustomEvents, Custom Tags.
- - Alternative software - High Performace
-
+ROCKET CRAFT - UE4 projetcs
+In ue4.24 I use http/https request data format JSON.
+- BarbarianRoadMashines
+- Shoot the zombie
+- Hang3d FPShooter
 
 Special skills Tools (python):
+I made a 2d map creator for my platformer 2d game.
+https://github.com/zlatnaspirala/creator-2dmap
+I made visual editor with python (kivy).
+https://github.com/zlatnaspirala/cross-k
+Wrap own webgpu engine intro reactjs https://github.com/zlatnaspirala/me-webgpu-react
+Remote control with web page : Opensource part: https://github.com/zlatnaspirala/wizard-service c# part commercial.
 
-I made 2d map createor for my platformer 2d game.
- - https://github.com/zlatnaspirala/creator-2dmap
-
- I made visual editor with python (kivy).
-  - https://github.com/zlatnaspirala/cross-k
-
- Wrap own webgpu engine intro reatjs
-  https://github.com/zlatnaspirala/me-webgpu-react
-
-Remote control woth web page :
-Opensource part:
-  https://github.com/zlatnaspirala/wizard-service
- c# part commercial.
+Tags: canvas2d-webgl-webrtc-android-sockets-realtime-nodejs-ue4-unity-xcode-visual-studio
 
 #### Tags: canvas2d-webgl-webrtc-android-sockets-realtime-nodejs-ue4-unity-xcode-visual-studio
 ![](https://github.com/zlatnaspirala/zlatnaspirala/blob/master/images/nikola_lukic.png)
 
 Personal dev stage server https://maximumroulette.com
 
-YT Channel https://www.youtube.com/channel/UCc1NtMtvoVzKnOtnai9LGsA/videos
-https://www.youtube.com/@3dprogramer
-
+YT Channel: https://www.youtube.com/@3dprogramer
 Stackoverflow: https://stackoverflow.com/users/1513187/nikola-lukic
 
 In best day i was top 14 but 3-4 year inactivity...
 Hackerrank AI Leaderboard https://www.hackerrank.com/leaderboard?page=3&track=ai&type=practice
 Filter Serbia : https://www.hackerrank.com/leaderboard?filter=Serbia&filter_on=country&page=1&track=ai&type=practice
-
 
 ## Open Source hosted projects [Standard Maximumroulette.com links]:
 
