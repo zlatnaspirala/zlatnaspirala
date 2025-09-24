@@ -12,25 +12,26 @@ Links comming from my free-time space.
 
 Profile
 
-Innovative software engineer with 15+ years of experience in web, real-time graphics, and multiplayer systems.
+Innovative software engineer with 15+ years of experience in web, real-time graphics, casino games and multiplayer systems.
 Specialized in canvas2d, WebGL/WebGPU, custom rendering engines, networking, and cross-platform development.
 Proven ability to design, implement, and ship full applications — from backend servers to front-end rendering engines — with high performance and scalability.
 
 Core Skills
 
-Graphics / Engines: WebGL, WebGPU, OpenGL ES, GLSL shaders, Three.js, Ammo.js, raycasting, BVH animation, physics integration.
+Graphics : WebGL, WebGPU, OpenGL ES, GLSL shaders, raycasting, BVH animation, physics integration.
 
-Front-End: JavaScript, TypeScript, HTML5 Canvas2D, React, Vue.js. (also expirience in native android/ios apps)
+Front-End: JavaScript, TypeScript, HTML5 Canvas2D, React.js, create reactjs packages, Vue.js, three.js , ammojs , cannonjs (also expirience in native android/ios apps but focus on web)
 
 Back-End & Networking: Node.js, WebSockets, WebRTC, Kurento, MongoDB.
 
-Game / Interactive Media: UE4, Unity, custom game engines, multiplayer architecture, cross-platform builds.
+Game Engines: UE4, Unity, create own game engines, multiplayer architecture, cross-platform builds.
 
 Other: Virtual DOM concepts, CustomEvents, performance optimization, responsive UI, mobile optimisation.
 
+
 ### Skills
 
-Make my own game engines for 2d/3d.Ussed cannon.js/ammojs for physics.
+Make my own game engines for 2d/3d. Used cannon.js/ammojs for physics.
 
 #### Matrix-engine
 - WebGL library based on glmatrix ver 2.xx. Can be downgraded with url param to the glsl 1.1.
@@ -42,7 +43,6 @@ Demos: https://maximumroulette.com/apps/matrix-engine/examples-build.html
 #### Visual-ts Game Engine
 - 2d canvas game engine based on Matter.js 2D physics engine for the web supported with backend node.js/mongoDB and visual GUI tool 2d map creator/python3.
 - https://github.com/zlatnaspirala/visual-ts-game-engine
-
 
 ### Database used MongoDB 
  I make uniq shema for database jobs.
