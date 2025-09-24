@@ -1,6 +1,8 @@
-Nikola Lukic (zlatnaspirala)
+## Profile
 
-Senior Software Engineer / 3D & Real-Time Developer
+### Nikola Lukic (zlatnaspirala)
+
+### Senior Software Engineer / 3D & Real-Time Developer
 
 📧 [maximumroulette.com](https://maximumroulette.com) • 
 🌐 [GitHub](https://github.com/zlatnaspirala) • 
@@ -10,19 +12,22 @@ Senior Software Engineer / 3D & Real-Time Developer
 
 In this portfolio there is no single professional project (usually NDC) Links coming from my free-time space.
 
-Profile
-
 Innovative software engineer with 15+ years of experience in web, real-time graphics, and multiplayer systems. Specialized in canvas2d, WebGL/WebGPU, custom rendering engines, networking, and cross-platform development. Proven ability to design, implement, and ship full applications — from backend servers to front-end rendering engines — with high performance and scalability.
 
-Core Skills
+### Core Skills
 
 Graphics / Engines: WebGL, WebGPU, OpenGL ES, GLSL shaders, Three.js, Ammo.js, raycasting, BVH animation, physics integration.
+
 Front-End: JavaScript, TypeScript, HTML5 Canvas2D, JQ, React, Vue.js. (also experience in native android/ios apps)
+
 Back-End & Networking: Node.js, WebSockets, WebRTC, Kurento, MongoDB.
+
 Game / Interactive Media: UE4, Unity, custom game engines, multiplayer architecture, cross-platform builds.
+
 Other: Virtual DOM concepts, CustomEvents, performance optimization, responsive UI, mobile optimisation.
 
-Skills/Projects
+
+### Skills/Projects
 
 Make my own game engines for 2d/3d. Used cannon.js/ammojs for physics.
 
