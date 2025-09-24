@@ -54,18 +54,19 @@ In ue4.24 I use http/https request data format JSON.
 - Hang3d FPShooter
 
 Special skills Tools (python):
-I made a 2d map creator for my platformer 2d game.
+
+- I made a 2d map creator for my platformer 2d game.
 https://github.com/zlatnaspirala/creator-2dmap
-I made visual editor with python (kivy).
+- I made visual editor with python (kivy).
 https://github.com/zlatnaspirala/cross-k
-Wrap own webgpu engine intro reactjs https://github.com/zlatnaspirala/me-webgpu-react
-Remote control with web page : Opensource part: https://github.com/zlatnaspirala/wizard-service c# part commercial.
+- Wrap own webgpu engine intro reactjs https://github.com/zlatnaspirala/me-webgpu-react
+- Remote control with web page
+   Opensource part: https://github.com/zlatnaspirala/wizard-service c# part commercial.
 
 Tags: canvas2d-webgl-webrtc-android-sockets-realtime-nodejs-ue4-unity-xcode-visual-studio
 
 #### Tags: canvas2d-webgl-webrtc-android-sockets-realtime-nodejs-ue4-unity-xcode-visual-studio
 ![](https://github.com/zlatnaspirala/zlatnaspirala/blob/master/images/nikola_lukic.png)
-
 
 In best day i was top 14 but 3-4 year inactivity...
 Hackerrank AI Leaderboard https://www.hackerrank.com/leaderboard?page=3&track=ai&type=practice
