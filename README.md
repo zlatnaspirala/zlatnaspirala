@@ -31,12 +31,18 @@ Other: Virtual DOM concepts, CustomEvents, performance optimization, responsive 
 
 Make my own game engines for 2d/3d. Used cannon.js/ammojs for physics.
 
-- Matrix-engine
+- Matrix-engine {physics cannojs}
 WebGL library based on glmatrix ver 2.xx. Can be downgraded with url param to the glsl 1.1.
 For networking used broadcaster Kure / kurento openvide driven.
 Demos: https://maximumroulette.com/apps/matrix-engine/examples-build.html
 
-- Visual-ts Game Engine
+- Matrix-engine WGPU
+WebGPU library based on matrix-wgpu {physics ammojs}
+For networking kurento openvide driven. This engien comes with web editor with visual scripting.
+MOBA game template
+Demos: https://maximumroulette.com/apps/fohb
+
+- Visual-ts Game Engine {physics matter.ts}
 2d canvas game engine based on Matter.js 2D physics engine for the web supported with backend node.js/mongoDB and visual GUI tool 2d map creator/python3.
 https://github.com/zlatnaspirala/visual-ts-game-engine
 
