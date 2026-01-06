@@ -139,7 +139,7 @@ Filter Serbia : https://www.hackerrank.com/leaderboard?filter=Serbia&filter_on=c
 
 ## Gallery
 
-<img src="https://github.com/zlatnaspirala/zlatnaspirala/blob/master/images/00.png" />
+<img width="860" height="640" src="https://github.com/zlatnaspirala/matrix-engine-wgpu/blob/main/non-project-files/visual-scripting-fetch.png?raw=true" />
 <img src="https://github.com/zlatnaspirala/zlatnaspirala/blob/master/images/1.png" />
 <img src="https://github.com/zlatnaspirala/zlatnaspirala/blob/master/images/2.png" />
 <img src="https://github.com/zlatnaspirala/zlatnaspirala/blob/master/images/3.png" />
