@@ -2,7 +2,7 @@
 
 ### Nikola Lukic (zlatnaspirala)
 
-### Senior Software Engineer / 3D & Real-Time Developer
+### Senior Software Engineer / 3D tech oriented
 
 📧 [maximumroulette.com](https://maximumroulette.com) • 
 🌐 [GitHub](https://github.com/zlatnaspirala) • 
