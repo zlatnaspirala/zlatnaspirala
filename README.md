@@ -8,7 +8,9 @@
 🌐 [GitHub](https://github.com/zlatnaspirala) • 
 💼 [LinkedIn](https://www.linkedin.com/in/3dprogramer/) • 
 🧑‍💻 [StackOverflow](https://stackoverflow.com/users/1513187/nikola-lukic)
+🧑‍💻 [StackOverflow Story](https://stackoverflow.com/users/story/3dprogrammer)
 [YT Channel](https://www.youtube.com/@3dprogramer)
+
 
 In this portfolio there is no single professional project (usually NDC) Links coming from my free-time space.
 
@@ -74,22 +76,24 @@ Tags: canvas2d-webgl-webrtc-android-sockets-realtime-nodejs-ue4-unity-xcode-visu
 #### Tags: canvas2d-webgl-webrtc-android-sockets-realtime-nodejs-ue4-unity-xcode-visual-studio
 ![](https://github.com/zlatnaspirala/zlatnaspirala/blob/master/images/nikola_lukic.png)
 
-In best day i was top 14 but 3-4 year inactivity...
+In best day i was top 14 but 3-4 year inactivity... (must be logged to see this link)
 Hackerrank AI Leaderboard https://www.hackerrank.com/leaderboard?page=3&track=ai&type=practice
 Filter Serbia : https://www.hackerrank.com/leaderboard?filter=Serbia&filter_on=country&page=1&track=ai&type=practice
 
 ## Open Source hosted projects [Standard Maximumroulette.com links]:
 
+- The Beast engine
+    https://maximumroulette.com/apps/webgpu/examples.html?demo=1
+    Zombie shooter: https://maximumroulette.com/apps/webgpu/examples.html?demo=30
+  
  Shader playground - I need more skills in this area. All shaders will be part
  of buildin matrix-engine custom shaders but only with MIT Licence.
  - https://github.com/zlatnaspirala/GLSL-Shaders
  - https://maximumroulette.com/apps/glsl-editor/
    
- - [matrix-engine-starter] wip
+ - [matrix-engine-starter] 
     https://maximumroulette.com/apps/matrix-engine-starter/projects/matrix-roulette/
     https://maximumroulette.com/apps/matrix-engine-starter/projects/hang3d/
- 
- - [SAFIR] My own virtual DOM ECMA6 project https://maximumroulette.com/apps/safir/
 
  - UE4 Hang3d Nightmare FPS Multiplayer [dedicated server runs / maybe not always NOT ACTIVE Oct 2024]
 
@@ -129,6 +133,10 @@ Filter Serbia : https://www.hackerrank.com/leaderboard?filter=Serbia&filter_on=c
 
 ## Commercial projects:
 
+### SUB - Multi remote desktop based only on node.js and web client
+ - Buy full at https://goldenspiral.itch.io/sub
+   Service link: https://sub-co54.onrender.com/
+
 ### Ultimate Roulette 0.1 With real physics [only desktop browsers for now]
  - https://roulette.maximumroulette.com
  - https://codecanyon.net/item/ultimate-roulette-version-10/26607762
@@ -145,6 +153,10 @@ Filter Serbia : https://www.hackerrank.com/leaderboard?filter=Serbia&filter_on=c
 
 ## Gallery
 
+<img width="630" height="500" alt="logo-screen" src="https://github.com/user-attachments/assets/f59fc51f-d3bd-463e-a598-b929e6ba6674" />
+<img width="945" height="2100" alt="multi remote desktop" src="https://github.com/user-attachments/assets/95a7a952-bddf-457a-a9f2-81543a9d1a3d" />
+<img width="1920" height="1080" alt="sub-remote-control" src="https://github.com/user-attachments/assets/e4e78bfc-8f7d-4865-8dc2-2dbd19fb5eac" />
+<img width="1920" height="1080" alt="sub-remote-control-admin" src="https://github.com/user-attachments/assets/5ed7e4bb-a360-4286-bb09-d86794721d09" />
 <img width="860" height="640" src="https://github.com/zlatnaspirala/matrix-engine-wgpu/blob/main/non-project-files/visual-scripting-fetch.png?raw=true" />
 <img src="https://github.com/zlatnaspirala/zlatnaspirala/blob/master/images/1.png" />
 <img src="https://github.com/zlatnaspirala/zlatnaspirala/blob/master/images/2.png" />
