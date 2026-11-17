@@ -11,6 +11,7 @@
 🧑‍💻 [StackOverflow Story](https://stackoverflow.com/users/story/3dprogrammer)
 [YT Channel](https://www.youtube.com/@3dprogramer)
 
+![](https://github.com/zlatnaspirala/zlatnaspirala/blob/master/images/nikola_lukic.png)
 
 In this portfolio there is no single professional project (usually NDC) Links coming from my free-time space.
 
@@ -74,7 +75,6 @@ https://github.com/zlatnaspirala/cross-k
 Tags: canvas2d-webgl-webrtc-android-sockets-realtime-nodejs-ue4-unity-xcode-visual-studio
 
 #### Tags: canvas2d-webgl-webrtc-android-sockets-realtime-nodejs-ue4-unity-xcode-visual-studio
-![](https://github.com/zlatnaspirala/zlatnaspirala/blob/master/images/nikola_lukic.png)
 
 In best day i was top 14 but 3-4 year inactivity... (must be logged to see this link)
 Hackerrank AI Leaderboard https://www.hackerrank.com/leaderboard?page=3&track=ai&type=practice
